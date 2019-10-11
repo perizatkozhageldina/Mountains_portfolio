@@ -10,7 +10,32 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
-        p This is new portfolio
+        //- +image('content/user.jpg', 'user-pic')
+        //- +icon('link', 'link-class')
+        //- .icon-bg
+        //- p This is new portfolio
+        .mainsection.fullscreen-section
+          .container
+            header.header
+              .logo ПК
+              nav.nav
+                ul.nav__list
+                  li.nav__item Главная
+                  li.nav__item Обо мне
+                  li.nav__item Навыки
+                  li.nav__item Работы
+                  li.nav__item Отзывы
+                  li.nav__item Связаться
+              .socials
+                ul.socials__list
+                  +icon('insta', 'link-class')
+                  +icon('vk', 'link-class')
+                  +icon('github', 'link-class')
+            .developer
+              .developer__title Личный сайт<br> веб разработчика
+              h1.developer__name Перизат Кожагельдина
+        .about
+        .usefulness
+        .works
+        .reviews
+        .contacts
