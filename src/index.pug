@@ -33,9 +33,55 @@ html(lang="en")
                   +icon('github', 'link-class')
             .developer
               .developer__title Личный сайт<br> веб разработчика
-              h1.developer__name Перизат Кожагельдина
-        .about
-        .usefulness
+              h1.developer__name Перизат<br>Кожагельдина
+        .about.fullscreen-section
+          .container
+            .myinfo
+              .myinfo__left
+                .myinfo__pic
+                  +image('content/perizat.png', 'user-pic')
+                .details
+                  ul.details__left-list
+                    li.details__left-item Проживаю:
+                    li.details__left-item Возраст:
+                    li.details__left-item Родился:
+                  ul.details__right-list
+                    li.details__right-item Астана
+                    li.details__right-item 26 лет
+                    li.details__right-item 15 апреля 1993
+              .myinfo__right
+                .myinfo__desc
+                    p Привет, меня зовут 
+                    p.title Перизат Кожагельдина
+                    p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .citation
+                  .citation__icon
+                  .citation__text
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .usefulness.fullscreen-section
+          .container
+            .knowledge
+              .knowledge__pic
+                +image('content/bug.png', 'knowledge-image')
+              .knowledge__info
+                .knowledge__text
+                  p.title Чем я могу быть полезен вам
+                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                ul.knowledge__list
+                  li.knowledge__item.area
+                    .area__title.title Front-end
+                    ul.area__list
+                      li.area__item HTML5
+                      li.area__item CSS3
+                      li.area__item Javascript
+                      li.area__item Jquery<br> и Vue.js
+                  li.knowledge__item.area
+                    .area__title.title Workflow
+                    ul.area__list
+                      li.area__item GIT
+                      li.area__item Terminal
+                      li.area__item Gulp
+                      li.area__item Webpack
         .works
         .reviews
         .contacts
