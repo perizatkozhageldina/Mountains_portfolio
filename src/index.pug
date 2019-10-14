@@ -14,74 +14,114 @@ html(lang="en")
         //- +icon('link', 'link-class')
         //- .icon-bg
         //- p This is new portfolio
-        .mainsection.fullscreen-section
+        .welcome-section
+          section.mainsection
+            .container.mainsection__container
+              header.mainsection__header
+                .mainsection__logo
+                  .logo ПК
+                .mainsection__menu
+                  nav.nav
+                    - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
+                    ul.nav__list
+                      each item in menu
+                        li.nav__item
+                          a(href="").nav__link #{item}
+                .mainsection__links
+                  - var icons = ['insta', 'vk', 'github']
+                  ul.socials__list
+                    each item in icons
+                        li.solials__item
+                          a(href="").socials__link
+                            +icon(`${item}`, 'socials__icon')
+              .mainsection__content
+                .user-info
+                  h1.user-info__desc Личный сайт<br> веб разработчика
+                  .user-info__name Перизат<br>Кожагельдина
+              .mainsection__btns
+                .scroll-down-btns
+                  .scroll-text Скролл
+                  +icon('scroll', 'scroll-icon')
+          section.about
+            .container.about__container
+              .about__left
+                .user
+                  .avatar.user__avatar
+                    +image("content/perizat.png", "avatar__pic")
+                  ul.user__desc
+                    - 
+                      var items = [
+                        ['Проживаю', 'Астана'],
+                        ['Возраст', '26'],
+                        ['Родилась', '15 апреля 1993'],
+                      ]
+                    each item in items
+                      li.user__desc-item
+                        .user__key #{item[0]}:&nbsp 
+                        .user__value #{item[1]}
+              .about__right
+                h4.about__title Привет, меня зовут
+                h2.about__name Перизат Кожагельдина
+                .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .triangles
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0, 0 0, 100 1000, 100")
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0, 100 1000, 100 1000, 0")
+        section.values
           .container
-            header.header
-              .logo ПК
-              nav.nav
-                ul.nav__list
-                  li.nav__item Главная
-                  li.nav__item Обо мне
-                  li.nav__item Навыки
-                  li.nav__item Работы
-                  li.nav__item Отзывы
-                  li.nav__item Связаться
-              .socials
-                ul.socials__list
-                  +icon('insta', 'link-class')
-                  +icon('vk', 'link-class')
-                  +icon('github', 'link-class')
-            .developer
-              .developer__title Личный сайт<br> веб разработчика
-              h1.developer__name Перизат<br>Кожагельдина
-        .about.fullscreen-section
-          .container
-            .myinfo
-              .myinfo__left
-                .myinfo__pic
-                  +image('content/perizat.png', 'user-pic')
-                .details
-                  ul.details__left-list
-                    li.details__left-item Проживаю:
-                    li.details__left-item Возраст:
-                    li.details__left-item Родился:
-                  ul.details__right-list
-                    li.details__right-item Астана
-                    li.details__right-item 26 лет
-                    li.details__right-item 15 апреля 1993
-              .myinfo__right
-                .myinfo__desc
-                    p Привет, меня зовут 
-                    p.title Перизат Кожагельдина
-                    p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                .citation
-                  .citation__icon
-                  .citation__text
-                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        .usefulness.fullscreen-section
-          .container
-            .knowledge
-              .knowledge__pic
-                +image('content/bug.png', 'knowledge-image')
-              .knowledge__info
-                .knowledge__text
-                  p.title Чем я могу быть полезен вам
-                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-                ul.knowledge__list
-                  li.knowledge__item.area
-                    .area__title Front-end
-                    ul.area__list
-                      li.area__item HTML5
-                      li.area__item CSS3
-                      li.area__item Javascript
-                      li.area__item Jquery<br> и Vue.js
-                  li.knowledge__item.area
-                    .area__title Workflow
-                    ul.area__list
-                      li.area__item GIT
-                      li.area__item Terminal
-                      li.area__item Gulp
-                      li.area__item Webpack
-        .works
-        .reviews
-        .contacts
+            h2.section-title.values__title Чем я могу быть полезен вам
+            .values__desc
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+          ul.user-skills
+            -
+              var skills = [
+                ['Frontend', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
+                ['Workflow', ['GIT', 'Terminal'], 'Gulp', 'Webpack']
+              ]
+            each item in skills
+              li.user-skills__item.skills-row
+                h3.skills-row__title #{item[0]}
+                ul.skills-row__list
+                  each skill in item[1]
+                    li.skills-row__item
+                      .skill
+                        svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
+                          circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-under
+                          circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-above
+                          linear-gradient()
+                        .skill__title #{skill}
+        section.works
+          h2.section-title Мои Работы
+          .works__content
+            .works__left
+              .slider
+                img.slider__fullpic
+                .slider__preview
+                  ul.previews 
+                  - for (var i=0; i< 3; i++)
+                    li.previews__item
+                      img.previews__pic
+                .slider__btns
+                  .slider-button
+                    button.slider-button.slider-button--slide--prev
+                    button.slider-button.slider-button--slide--next
+            .works__right
+              .works__tags.tags-block
+                - var tags = ['html', 'css', 'javascript']
+                ul.tags__list
+                  each tag in tags
+                    li.tags__item #{tag}
+              .works__text
+                h3.works__title Сайт школы образования
+                .works__desc-text
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                a.viewlink
+                  +icon("link", "viewlink__icon")
+                  .viewlink__text Посмотреть сайт
+        .triangles.triangles--lightblue
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0, 0 0, 100 1000, 100")
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0, 100 1000, 100 1000, 0")
