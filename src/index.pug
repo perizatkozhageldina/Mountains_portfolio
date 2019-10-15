@@ -10,10 +10,6 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        //- +image('content/user.jpg', 'user-pic')
-        //- +icon('link', 'link-class')
-        //- .icon-bg
-        //- p This is new portfolio
         .welcome-section
           section.mainsection
             .container.mainsection__container
@@ -90,16 +86,17 @@ html(lang="en")
                         svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
                           circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-under
                           circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-above
-                          //- linear-gradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="100%")
-                          //-   stop(offset="0%" stop-color="#9300e8")
-                          //-   stop(offset="100%" stop-color="#4a00ed")
+                          linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="100%")
+                            stop(offset="0%" stop-color="#9300e8")
+                            stop(offset="100%" stop-color="#4a00ed")
                         .skill__title #{skill}
         section.works
           .container
             h2.section-title Мои Работы
             .works__content.slider
               .slider__left
-                +image('content/mainslide.png', 'slider__fullpic')
+                .slider__photo
+                  +image('content/mainslide.png', 'slider__fullpic')
                 .slider__preview
                   ul.previews 
                     - var sliderImages = ['content/slide1.png', 'content/slide2.png', 'content/slide3.png']

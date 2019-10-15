@@ -7,11 +7,13 @@
 
 .form__row {
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .form__block {
     margin-right: 50px;
+    border-bottom: 2px solid $text-color;
+    flex: 1;
 
     &:last-child {
         margin-right: 0;
@@ -28,10 +30,10 @@
 
 .form__input {
     border: none;
-    border-bottom: 2px solid $text-color;
     outline: none;
     background: none;
     padding-left: 40px;
+    min-width: 400px;
 }
 
 .input-icon {
