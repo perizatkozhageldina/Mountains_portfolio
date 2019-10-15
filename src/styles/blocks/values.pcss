@@ -2,8 +2,45 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("~images/content/bug.png") left -250px center / 50% no-repeat;
+}
+
+.values__container {
+    margin-left: 30%;
+    margin-bottom: 50px;
+}
+
+.values__title {
+    margin-bottom: 30px;
+}
+
+.values__desc {
+    width: 50%;
+    opacity: .5;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.user-skills {
+    margin-left: 300px;
+}
+
+.skills-row {
+    margin-bottom: 60px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .skills-row__list {
     display: flex;
+}
+
+.skills-row__title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 30px;
 }

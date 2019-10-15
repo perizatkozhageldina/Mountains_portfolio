@@ -70,7 +70,7 @@ html(lang="en")
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0, 100 1000, 100 1000, 0")
         section.values
-          .container
+          .container.values__container
             h2.section-title.values__title Чем я могу быть полезен вам
             .values__desc
               p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
@@ -90,38 +90,123 @@ html(lang="en")
                         svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
                           circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-under
                           circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-above
-                          linear-gradient()
+                          //- linear-gradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="100%")
+                          //-   stop(offset="0%" stop-color="#9300e8")
+                          //-   stop(offset="100%" stop-color="#4a00ed")
                         .skill__title #{skill}
         section.works
-          h2.section-title Мои Работы
-          .works__content
-            .works__left
-              .slider
-                img.slider__fullpic
+          .container
+            h2.section-title Мои Работы
+            .works__content.slider
+              .slider__left
+                +image('content/mainslide.png', 'slider__fullpic')
                 .slider__preview
                   ul.previews 
-                  - for (var i=0; i< 3; i++)
-                    li.previews__item
-                      img.previews__pic
+                    - var sliderImages = ['content/slide1.png', 'content/slide2.png', 'content/slide3.png']
+                      li.previews__items
+                        each sliderImage in sliderImages
+                          +image(`${sliderImage}`, 'previews__pic')
                 .slider__btns
-                  .slider-button
+                  .slider-buttons
                     button.slider-button.slider-button--slide--prev
+                      +icon('arrow-down', 'prev__icon')
                     button.slider-button.slider-button--slide--next
-            .works__right
-              .works__tags.tags-block
-                - var tags = ['html', 'css', 'javascript']
-                ul.tags__list
-                  each tag in tags
-                    li.tags__item #{tag}
-              .works__text
-                h3.works__title Сайт школы образования
-                .works__desc-text
-                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                a.viewlink
-                  +icon("link", "viewlink__icon")
-                  .viewlink__text Посмотреть сайт
+                      +icon('arrow-down', 'prev__icon prev__icon--next')
+              .slider__right
+                .works__tags.tags-block
+                  - var tags = ['html', 'css', 'javascript']
+                  ul.tags__list
+                    each tag in tags
+                      li.tags__item #{tag}
+                .works__text
+                  h3.works__title Сайт школы образования
+                  .works__desc-text
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                  a.viewlink
+                    +icon("link", "viewlink__icon")
+                    .viewlink__text Посмотреть сайт
         .triangles.triangles--lightblue
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0, 0 0, 100 1000, 100")
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0, 100 1000, 100 1000, 0")
+        .budda-section
+          section.reviews
+            .container
+              .reviews__title.section-title Что обо мне говорят
+              .column-slider
+                .quote
+                  +icon('quote', 'quote-icon')
+                .column-slider__left
+                  .column-slider__text
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .column-slider__member.member
+                    .avatar.member__avatar
+                      +image("content/dima.png", "avatar__pic")
+                    .member__info
+                      .member__name Ковальчук Дмитрий
+                      .member__position Основатель Loftschool
+                .quote
+                  +icon('quote', 'quote-icon')
+                .column-slider__right
+                  .column-slider__text
+                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .column-slider__member.member
+                    .avatar.member__avatar
+                      +image("content/vova.png", "avatar__pic")
+                    .member__info
+                      .member__name Владимир Сабанцев
+                      .member__position Преподаватель
+                .column-slider__btns
+          section.contacts
+            .container
+              .contacts__title.section-title Связаться со мной
+              .contacts__form
+                form.form-elem
+                  .form__row
+                    label.form__block
+                      .form__title Введите ваше имя
+                      .input-block
+                        .input-icon
+                          +icon('user', 'form-icon')
+                        input.form__input(type="text")   
+                    label.form__block
+                      .form__title Введите ваш email
+                      .input-block
+                        .input-icon
+                          +icon('envelope', 'form-icon')
+                        input.form__input(type="text")
+                  .form__row
+                    label.form__block
+                      .form__title Сообщение к письму
+                      .input-block
+                        .input-icon
+                          +icon('message', 'form-icon')
+                        input.form__input(type="text")
+                  button.form__btn Отправить
+          footer.footer
+            .container.footer__container
+              .footer__first
+                .footer__year &copy 2019
+                .footer__user Перизат<br> Кожагельдина
+                .footer__desc Личный сайт<br> веб-разработчика
+              .footer__second
+                nav.footer-nav
+                  ul.footer-nav__list
+                    each link in menu
+                      li.footer-nav__item
+                        a(href="").footer-nav__link #{link}
+                .footer__text
+                  .footer__info
+                    .footer__prolog Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                    ul.footer__socials
+                      each item in icons
+                        li.footer__item
+                          a(href="").footer__link
+                            +icon(`${item}`, 'footer__icon')
+                  .footer__advice
+                    .advice__text
+                      p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                    .advice__author Martin Golding
+                  
+
