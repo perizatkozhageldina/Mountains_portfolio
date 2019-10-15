@@ -56,10 +56,10 @@ html(lang="en")
                         .user__key #{item[0]}:&nbsp 
                         .user__value #{item[1]}
               .about__right
-                h4.about__title Привет, меня зовут
+                h4.about__title.section-text Привет, меня зовут
                 h2.about__name Перизат Кожагельдина
-                .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .about__text.section-text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about__ps.section-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         .triangles
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0, 0 0, 100 1000, 100")
@@ -68,7 +68,7 @@ html(lang="en")
         section.values
           .container.values__container
             h2.section-title.values__title Чем я могу быть полезен вам
-            .values__desc
+            .values__desc.section-text
               p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
           ul.user-skills
             -
@@ -117,7 +117,7 @@ html(lang="en")
                       li.tags__item #{tag}
                 .works__text
                   h3.works__title Сайт школы образования
-                  .works__desc-text
+                  .works__desc-text.section-text
                     p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                   a.viewlink
                     +icon("link", "viewlink__icon")
@@ -135,25 +135,25 @@ html(lang="en")
                 .quote
                   +icon('quote', 'quote-icon')
                 .column-slider__left
-                  .column-slider__text
+                  .column-slider__text.section-text
                     p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                   .column-slider__member.member
                     .avatar.member__avatar
                       +image("content/dima.png", "avatar__pic")
                     .member__info
                       .member__name Ковальчук Дмитрий
-                      .member__position Основатель Loftschool
+                      .member__position.section-text Основатель Loftschool
                 .quote
                   +icon('quote', 'quote-icon')
                 .column-slider__right
-                  .column-slider__text
+                  .column-slider__text.section-text
                     p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
                   .column-slider__member.member
                     .avatar.member__avatar
                       +image("content/vova.png", "avatar__pic")
                     .member__info
                       .member__name Владимир Сабанцев
-                      .member__position Преподаватель
+                      .member__position.section-text Преподаватель
                 .column-slider__btns
           section.contacts
             .container
@@ -162,20 +162,20 @@ html(lang="en")
                 form.form-elem
                   .form__row
                     label.form__block
-                      .form__title Введите ваше имя
+                      .form__title.section-text Введите ваше имя
                       .input-block
                         .input-icon
                           +icon('user', 'form-icon')
                         input.form__input(type="text")   
                     label.form__block
-                      .form__title Введите ваш email
+                      .form__title.section-text Введите ваш email
                       .input-block
                         .input-icon
                           +icon('envelope', 'form-icon')
                         input.form__input(type="text")
                   .form__row
                     label.form__block
-                      .form__title Сообщение к письму
+                      .form__title.section-text Сообщение к письму
                       .input-block
                         .input-icon
                           +icon('message', 'form-icon')
