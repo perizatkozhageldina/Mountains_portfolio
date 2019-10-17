@@ -5,3 +5,17 @@ mixin icon(name, className)
 
 mixin image(path, className)
   img(src=require(`images/${path}`) class=className)
+
+mixin menu(menu,index)
+  nav.nav             
+    ul.nav__list
+      each item in menu
+        li.nav__item
+          a(href="").nav__link #{item}
+
+mixin socials(icons)
+  ul.socials__list
+    each item in icons
+      li.socials__item
+        a(href="").socials__link
+          +icon(`${item}`, 'socials__icon')

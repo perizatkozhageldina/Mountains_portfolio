@@ -7,6 +7,16 @@
     max-width: 50%;
     position: relative;
     margin-right: 100px;
+
+    &::before {
+        content: "2";
+        font-size: 300px;
+        font-weight: bold;
+        opacity: .1;
+        position: absolute;
+        right: -20%;
+        bottom:  10%;
+    }
 }
 
 .slider__photo {
@@ -38,16 +48,32 @@
     width: 50px;
     height: 50px;
     outline: none;
+    transition: .4s;
+
+    &:hover {
+        background: $hover-color;
+    }
 }
 
 .previews__pic {
+    position: relative;
 
     &:hover {
-        outline: 2px solid #d08e28;
+        &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: red;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
     }
 
-    &:active {
-        outline: 2px solid #d08e28;
+    &--active {
+        outline: 2px solid $hover-color;
     }
 }
 
@@ -63,18 +89,7 @@
 }
 
 .slider__right {
-    position: relative;
     max-width: 400px;
-
-    &::before {
-        content: "2";
-        font-size: 300px;
-        font-weight: bold;
-        opacity: .1;
-        position: absolute;
-        left: -35%;
-        bottom:  10%;
-    }
 }
 
 .works__tags {
@@ -87,10 +102,13 @@
 
 .tags__item {
     margin: 0 20px;
+    font-size: 15px;
+    opacity: .7;
+    font-weight: 400;
     background: rgba($text-color, .1);
     color: $text-color;
     border-radius: 30px;
-    padding: 10px 20px;
+    padding: 16px 23px;
 
     &:last-child {
         margin-right: 0;

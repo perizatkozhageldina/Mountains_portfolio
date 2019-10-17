@@ -3,7 +3,7 @@
     align-items: center;
 }
 
-.solials__item {
+.socials__item {
     margin-right: 40px;
 
     &:last-child {
@@ -12,8 +12,13 @@
 }
 
 .socials__icon {
-    width: 28px;
+    width: 31px;
     height: 31px;
     display: block;
     fill: $text-color;
+    transition: .4s;
+
+    &:hover {
+        fill: $hover-color;
+    }
 }

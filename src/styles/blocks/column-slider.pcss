@@ -12,7 +12,8 @@
 }
 
 .column-slider__btn {
-    cursor: pointer;
+    background: none;
+    outline: none;
     margin-right: 50px;
 
     &:last-child {
@@ -25,8 +26,8 @@
             content: "";
             width: 50px;
             height: 50px;        
-            top: -55%;
-            left: -30%;
+            top: -70%;
+            left: -15%;
             border-radius: 50%;
             border: 1px solid $text-color;
         }
@@ -38,8 +39,8 @@
             content: "";
             width: 50px;
             height: 50px;        
-            top: -55%;
-            left: 55%;
+            top: -70%;
+            left: 60%;
             border-radius: 50%;
             border: 1px solid $text-color;
         }
@@ -65,9 +66,19 @@
 .column-slider__block {
     max-width: 350px;
     margin-right: 100px;
+    position: relative;
 
     &:last-child {
         margin-right: 0;
+    }
+
+    &::before {
+        content: "";
+        background: svg-load('quote.svg', fill=rgba(white, 0.3), width="50px", height="50px") no-repeat left top;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: -60px;
     }
 }
 

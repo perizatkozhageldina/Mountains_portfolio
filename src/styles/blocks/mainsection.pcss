@@ -1,37 +1,49 @@
 .mainsection {
-    height: 100vh;
+    min-height: 960px;
 }
 
 .mainsection__container {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 120px 1fr 100px;
+    grid-template-areas:
+    "header"
+    "mainsection"
+    "mainsection-btns";
 }
 
 .mainsection__header {
-    display: flex;
+    padding-top: 65px;
+    grid-area: header;
     align-items: center;
-    justify-content: space-between;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 200px 1fr 250px;
+    grid-template-areas:
+    "logo header-menu header-links";
 }
 
 .logo {
-    font-weight: 900;
+    grid-area: logo;
+    font-weight: 700;
     font-size: 36px;
 }
 
 .mainsection__menu {
+    grid-area: header-menu;
     margin: 0 20px;
 }
 
-.mainsection__header {
-    padding-top: 40px;
-}
-
 .mainsection__content {
+    min-height: 650px;
+    grid-area: mainsection;
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: center;
+}
+
+.mainsection__links {
+    grid-area: header-links;
 }
 
 .user-info {
@@ -42,6 +54,10 @@
 .user-info__desc {
     text-align: right;
     margin-right: 60px;
+    font-size: 18px;
+    font-weight: 400;
+    opacity: .4;
+    padding-top: 20px;
 }
 
 .user-info__name {
@@ -50,6 +66,7 @@
 }
 
 .mainsection__btns {
+    grid-area: mainsection-btns;
     display: flex;
     justify-content: center;
     padding: 50px 0;
@@ -59,6 +76,13 @@
     font-weight: bold;
     display: flex;
     align-items: center;
+
+    &:hover {
+        .scroll-icon {
+            fill: $hover-color;
+            transform: translateY(5px);
+        }
+    }
 }
 
 .scroll-text {
@@ -66,7 +90,9 @@
 }
 
 .scroll-icon {
+    cursor: pointer;
     fill: $text-color;
     width: 30px;
     height: 30px;
+    transition: .5s;
 }

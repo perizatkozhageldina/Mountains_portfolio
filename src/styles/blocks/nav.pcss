@@ -4,7 +4,33 @@
 }
 
 .nav__item {
-    margin-right: 30px;
+    margin-right: 60px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    transition: .4s;
+
+    &:hover {
+        font-weight: bold;
+    }
+
+    &:active {
+        font-weight: bold;
+        color: $hover-color;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: $hover-color;
+            width: 120px;
+            height: 3px;        
+        }
+    }
 
     &:last-child {
         margin-right: 0;

@@ -1,47 +1,100 @@
 .about{
-    height: 100vh;
+    min-height: 960px;
     padding-bottom: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.about__container {
-    display: flex;
-    justify-content: center;
+.user {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "left right";
 }
 
-.about__left {
-    max-width: 300px;
-    margin-right: 100px;
+ .about__left {
+    grid-area: left;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "avatar"
+    "user-desc";
+
+ }
+
+.avatar {
+    grid-area: avatar;
+    justify-self: center;
+}
+
+.user__desc {
+    grid-area: user-desc;
+    justify-self: center;
+    align-self: center;
+}
+
+.user__desc-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "user-key user-value";
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.user__key {
+    grid-area: user-key;
+    opacity: .5;
+}
+
+.user__value {
+    grid-area: user-value;
+    font-weight: bold;
 }
 
 .about__right {
-    max-width: 550px;
+    grid-area: right;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 3fr;
+    grid-template-areas:
+    "about-title"
+    "about-name"
+    "about-text"
+    "about-ps";
 }
 
 .about__title {
-    margin-bottom: 30px;
+    grid-area: about-title;
+    align-self: center;
 }
 
 .about__name {
+    grid-area: about-name;
+    align-self: center;
     font-size: 36px;
     font-weight: bold;
-    margin-bottom: 40px;
 }
 
 .about__text {
-    margin-bottom: 60px;
+    grid-area: about-text;
+    align-self: center;
 }
 
 .about__ps {
+    grid-area: about-ps;
+    align-self: center;
     position: relative;
 
     &::before {
-        position: absolute;
-        bottom: 20px;
-        left: -45px;
         content: "*";
+        position: absolute;
+        top: -35px;
+        left: -55px;    
         color: red;
         opacity: .1;
         font-size: 50px;

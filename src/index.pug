@@ -17,19 +17,11 @@ html(lang="en")
                 .mainsection__logo
                   .logo ПК
                 .mainsection__menu
-                  nav.nav
-                    - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
-                    ul.nav__list
-                      each item in menu
-                        li.nav__item
-                          a(href="").nav__link #{item}
+                  - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
+                    +menu(menu)
                 .mainsection__links
                   - var icons = ['insta', 'vk', 'github']
-                  ul.socials__list
-                    each item in icons
-                        li.solials__item
-                          a(href="").socials__link
-                            +icon(`${item}`, 'socials__icon')
+                    +socials(icons)
               .mainsection__content
                 .user-info
                   h1.user-info__desc Личный сайт<br> веб разработчика
@@ -40,8 +32,8 @@ html(lang="en")
                   +icon('scroll', 'scroll-icon')
           section.about
             .container.about__container
-              .about__left
-                .user
+              .user
+                .about__left
                   .avatar.user__avatar
                     +image("content/perizat.png", "avatar__pic")
                   ul.user__desc
@@ -55,11 +47,11 @@ html(lang="en")
                       li.user__desc-item
                         .user__key #{item[0]}:&nbsp 
                         .user__value #{item[1]}
-              .about__right
-                h4.about__title.section-text Привет, меня зовут
-                h2.about__name Перизат Кожагельдина
-                .about__text.section-text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                .about__ps.section-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .about__right
+                  h4.about__title.section-text Привет, меня зовут
+                  h2.about__name Перизат Кожагельдина
+                  .about__text.section-text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  .about__ps.section-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         .triangles
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0, 0 0, 100 1000, 100")
@@ -133,13 +125,13 @@ html(lang="en")
               .reviews__title.section-title Что обо мне говорят
               .column-slider
                 .column-slider__btns
-                  .column-slider__btn.column-slider__btn--prev  
+                  button.column-slider__btn.column-slider__btn--prev  
                     +icon('arrow-down', 'column-slider-icon column-slider-icon--prev')
-                  .column-slider__btn.column-slider__btn--next
+                  button.column-slider__btn.column-slider__btn--next
                     +icon('arrow-down', 'column-slider-icon column-slider-icon--next')
                 .column-slider__content
-                  .quote
-                    +icon('quote', 'quote-icon')
+                  //- .quote
+                  //-   +icon('quote', 'quote-icon')
                   .column-slider__block
                     .column-slider__text.section-text
                       p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
@@ -149,8 +141,8 @@ html(lang="en")
                       .member__info
                         .member__name Ковальчук Дмитрий
                         .member__position.section-text Основатель Loftschool
-                  .quote
-                    +icon('quote', 'quote-icon')
+                  //- .quote
+                  //-   +icon('quote', 'quote-icon')
                   .column-slider__block
                     .column-slider__text.section-text
                       p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
@@ -171,20 +163,20 @@ html(lang="en")
                       .input-block
                         .input-icon
                           +icon('user', 'form-icon')
-                        input.form__input(type="text")   
+                        input.form__input(type="text", placeholder="Ковальчук Дмитрий")   
                     label.form__block
                       .form__title.section-text Введите ваш email
                       .input-block
                         .input-icon
                           +icon('envelope', 'form-icon')
-                        input.form__input(type="text")
+                        input.form__input(type="text", placeholder="loftschool@study.com")
                   .form__row
                     label.form__block
                       .form__title.section-text Сообщение к письму
                       .input-block
                         .input-icon
                           +icon('message', 'form-icon')
-                        input.form__input(type="text")
+                        input.form__input(type="text", placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
                   button.form__btn Отправить
           footer.footer
             .container.footer__container
@@ -193,19 +185,11 @@ html(lang="en")
                 .footer__user Перизат<br> Кожагельдина
                 .footer__desc Личный сайт<br> веб-разработчика
               .footer__second
-                nav.footer-nav
-                  ul.footer-nav__list
-                    each link in menu
-                      li.footer-nav__item
-                        a(href="").footer-nav__link #{link}
+                +menu(menu)
                 .footer__text
                   .footer__info
                     .footer__prolog Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-                    ul.footer__socials
-                      each item in icons
-                        li.footer__item
-                          a(href="").footer__link
-                            +icon(`${item}`, 'footer__icon')
+                      +socials(icons)
                   .footer__advice
                     .advice__text
                       p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
