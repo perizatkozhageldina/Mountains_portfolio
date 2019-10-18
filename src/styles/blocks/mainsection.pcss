@@ -48,21 +48,24 @@
 
 .user-info {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
 }
 
 .user-info__desc {
-    text-align: right;
-    margin-right: 60px;
+    text-align: center;
     font-size: 18px;
     font-weight: 400;
     opacity: .4;
-    padding-top: 20px;
+    width: 35%;
 }
 
 .user-info__name {
     font-weight: bold;
     font-size: 72px;
+    text-align: center;
 }
 
 .mainsection__btns {
@@ -74,6 +77,8 @@
 
 .scroll-down-btns {
     font-weight: bold;
+    align-self: center;
+    justify-self: center;
     display: flex;
     align-items: center;
 

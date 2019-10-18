@@ -3,6 +3,12 @@
     align-items: center;
 }
 
+.mainsection__menu {
+    @include tablets {
+        display: none;
+    }
+}
+
 .mainsection__menu .nav__item {
     margin-right: 60px;
     font-size: 16px;

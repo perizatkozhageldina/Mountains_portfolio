@@ -9,10 +9,13 @@ section.mainsection
             .mainsection__links
                 - var icons = ['insta', 'vk', 'github']
                 +socials(icons)
+            .fixed-menu
+                svg.fixed-menu__item(viewBox="0 0 50 50" preserveAspectRatio="none")
+                    line(x1="0" y1="0" x2="50" y2="0")
         .mainsection__content
             .user-info
-                h1.user-info__desc Личный сайт<br> веб разработчика
-                .user-info__name Перизат<br>Кожагельдина
+                h1.user-info__desc Личный сайт веб разработчика
+                .user-info__name Перизат Кожагельдина
         .scroll-down-btns
             .scroll-text Скролл
             +icon('scroll', 'scroll-icon')
