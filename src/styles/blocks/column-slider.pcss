@@ -1,17 +1,18 @@
 .column-slider {
-    display: flex;
-    justify-content: center;
     position: relative;
-
+    justify-self: start;
+    margin-left: 90px;
 }
 
 .column-slider__btns {
-    position: absolute;
-    top: -130px;
     display: flex;
+    position: absolute;
+    top: -45%;
+    left: 45%;
 }
 
 .column-slider__btn {
+    position: relative;
     background: none;
     outline: none;
     margin-right: 50px;
@@ -20,29 +21,26 @@
         margin-right: 0;
     }
 
+    &::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 50px;     
+        border-radius: 50%;
+        border: 1px solid $text-color;
+    }
+
     &--prev {
         &::before {
-            position: absolute;
-            content: "";
-            width: 50px;
-            height: 50px;        
             top: -70%;
-            left: -15%;
-            border-radius: 50%;
-            border: 1px solid $text-color;
+            left: -70%;
         }
     }
     
     &--next {
         &::before {
-            position: absolute;
-            content: "";
-            width: 50px;
-            height: 50px;        
             top: -70%;
-            left: 60%;
-            border-radius: 50%;
-            border: 1px solid $text-color;
+            left: -70%;
         }
     }
 }
@@ -59,14 +57,21 @@
 }
 
 .column-slider__content {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 130px;
 }
 
 .column-slider__block {
-    max-width: 350px;
-    margin-right: 100px;
     position: relative;
+    align-self: start;
+    display: grid;
+    grid-template-rows: minmax(100px, 1fr) 30%;
+    grid-template-areas: 
+    "column-slider-text"
+    "column-slider-member";
+    grid-row-gap: 70px;
+    align-items: start;
 
     &:last-child {
         margin-right: 0;
@@ -74,33 +79,38 @@
 
     &::before {
         content: "";
-        background: svg-load('quote.svg', fill=rgba(white, 0.3), width="50px", height="50px") no-repeat left top;
-        width: 50px;
-        height: 50px;
+        background: svg-load('quote.svg', fill=$text-color, width="70px", height="60px") no-repeat left top;
+        opacity: .3;
+        width: 70px;
+        height: 60px;
         position: absolute;
-        left: -60px;
+        left: -90px;
     }
 }
 
 .column-slider__text {
-    margin-bottom: 70px;
+    grid-area: column-slider-text;
     font-weight: 600;
 }
 
 .column-slider__member {
+    grid-area: column-slider-member;
     display: flex;
     align-items: center;
 }
 
 .member__avatar {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     margin-right: 30px;
 }
 
 .member__name {
     font-weight: bold;
     margin-bottom: 20px;
+}
+
+.member__info {
 }
 
 .quote {

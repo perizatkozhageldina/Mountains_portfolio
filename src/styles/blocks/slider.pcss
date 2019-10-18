@@ -1,12 +1,14 @@
 .slider {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "slider-left slider-right";
+    grid-column-gap: 120px;
 }
 
 .slider__left {
-    max-width: 50%;
+    grid-area: slider-left;
     position: relative;
-    margin-right: 100px;
 
     &::before {
         content: "2";
@@ -89,11 +91,19 @@
 }
 
 .slider__right {
-    max-width: 400px;
+    grid-area: slider-right;
+    display: grid;
+    grid-template-rows: 20% 20% 1fr 10%;
+    grid-template-areas:
+    "slider-tags"
+    "slider-title"
+    "slider-text"
+    "slider-link";
+    align-items: center;
 }
 
-.works__tags {
-    margin-bottom: 60px;
+.slider__tags {
+    grid-area: slider-tags;
 }
 
 .tags__list {
@@ -115,13 +125,17 @@
     }
 }
 
-.works__title {
+.slider__title {
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 40px;
+    grid-area: slider-title;
 }
 
-.works__desc-text {
-    margin-bottom: 50px;
+.slider__desc {
+    grid-area: slider-text;
+    align-self: start;
 }
 
+.slider__link {
+    grid-area: slider-link;
+}

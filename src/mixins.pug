@@ -6,7 +6,7 @@ mixin icon(name, className)
 mixin image(path, className)
   img(src=require(`images/${path}`) class=className)
 
-mixin menu(menu,index)
+mixin menu(menu)
   nav.nav             
     ul.nav__list
       each item in menu

@@ -1,8 +1,7 @@
 .form__elem {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
-    width: 900px;
 }
 
 .form__row {
@@ -29,10 +28,13 @@
 
 .form__title {
     margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .input-block {
     display: flex;
+    padding-bottom: 10px;
 }
 
 .form__input {
@@ -40,8 +42,19 @@
     outline: none;
     background: none;
     padding-left: 40px;
-    min-width: 400px;
     width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    color: $text-color;
+    text-wrap: wrap;
+
+    &::placeholder {
+        font-size: 18px;
+        font-weight: bold;
+        color: $text-color;
+        text-wrap: wrap;
+
+    }
 }
 
 .input-icon {
@@ -49,7 +62,8 @@
 }
 
 .form-icon {
-    width: 25px;
+    display: block;
+    width: 30px;
     height: 30px;
     fill: $text-color;
     opacity: .5;
@@ -64,4 +78,6 @@
     color: white;
     font-weight: bold;
     outline: none;
+    font-size: 18px;
+    text-transform: uppercase;
 }

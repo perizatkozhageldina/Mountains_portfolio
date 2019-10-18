@@ -1,5 +1,4 @@
 include ./mixins.pug
-
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -11,188 +10,23 @@ html(lang="en")
     .wrapper
       .maincontent
         .welcome-section
-          section.mainsection
-            .container.mainsection__container
-              header.mainsection__header
-                .mainsection__logo
-                  .logo ПК
-                .mainsection__menu
-                  - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
-                    +menu(menu)
-                .mainsection__links
-                  - var icons = ['insta', 'vk', 'github']
-                    +socials(icons)
-              .mainsection__content
-                .user-info
-                  h1.user-info__desc Личный сайт<br> веб разработчика
-                  .user-info__name Перизат<br>Кожагельдина
-              .mainsection__btns
-                .scroll-down-btns
-                  .scroll-text Скролл
-                  +icon('scroll', 'scroll-icon')
-          section.about
-            .container.about__container
-              .user
-                .about__left
-                  .avatar.user__avatar
-                    +image("content/perizat.png", "avatar__pic")
-                  ul.user__desc
-                    - 
-                      var items = [
-                        ['Проживаю', 'Астана'],
-                        ['Возраст', '26'],
-                        ['Родилась', '15 апреля 1993'],
-                      ]
-                    each item in items
-                      li.user__desc-item
-                        .user__key #{item[0]}:&nbsp 
-                        .user__value #{item[1]}
-                .about__right
-                  h4.about__title.section-text Привет, меня зовут
-                  h2.about__name Перизат Кожагельдина
-                  .about__text.section-text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                  .about__ps.section-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+          include template/mainsection.pug
+          include template/about.pug
         .triangles
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0, 0 0, 100 1000, 100")
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0, 100 1000, 100 1000, 0")
-        section.values
-          .container.values__container
-            h2.section-title.values__title Чем я могу быть полезен вам
-            .values__desc.section-text
-              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-          ul.user-skills
-            -
-              var skills = [
-                ['Frontend', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
-                ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']]
-              ]
-            each item in skills
-              li.user-skills__item.skills-row
-                h3.skills-row__title #{item[0]}
-                ul.skills-row__list
-                  each skill in item[1]
-                    li.skills-row__item
-                      .skill
-                        svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                          circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-under
-                          circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-above
-                          linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="100%")
-                            stop(offset="0%" stop-color="#9300e8")
-                            stop(offset="100%" stop-color="#4a00ed")
-                        .skill__title #{skill}
-        section.works
-          .container
-            h2.section-title Мои Работы
-            .works__content.slider
-              .slider__left
-                .slider__photo
-                  +image('content/mainslide.png', 'slider__fullpic')
-                .slider__preview
-                  ul.previews 
-                    - var sliderImages = ['content/slide1.png', 'content/slide2.png', 'content/slide3.png']
-                      li.previews__items
-                        each sliderImage in sliderImages
-                          +image(`${sliderImage}`, 'previews__pic')
-                .slider__btns
-                  .slider-buttons
-                    button.slider-button.slider-button--slide--prev
-                      +icon('arrow-down', 'prev__icon')
-                    button.slider-button.slider-button--slide--next
-                      +icon('arrow-down', 'prev__icon prev__icon--next')
-              .slider__right
-                .works__tags.tags-block
-                  - var tags = ['html', 'css', 'javascript']
-                  ul.tags__list
-                    each tag in tags
-                      li.tags__item #{tag}
-                .works__text
-                  h3.works__title Сайт школы образования
-                  .works__desc-text.section-text
-                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                  a.viewlink
-                    +icon("link", "viewlink__icon")
-                    .viewlink__text Посмотреть сайт
+        include template/values.pug                
+        include template/works.pug        
         .triangles.triangles--lightblue
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0, 0 0, 100 1000, 100")
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="0, 100 1000, 100 1000, 0")
         .budda-section
-          section.reviews
-            .container
-              .reviews__title.section-title Что обо мне говорят
-              .column-slider
-                .column-slider__btns
-                  button.column-slider__btn.column-slider__btn--prev  
-                    +icon('arrow-down', 'column-slider-icon column-slider-icon--prev')
-                  button.column-slider__btn.column-slider__btn--next
-                    +icon('arrow-down', 'column-slider-icon column-slider-icon--next')
-                .column-slider__content
-                  //- .quote
-                  //-   +icon('quote', 'quote-icon')
-                  .column-slider__block
-                    .column-slider__text.section-text
-                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .column-slider__member.member
-                      .avatar.member__avatar
-                        +image("content/dima.png", "avatar__pic")
-                      .member__info
-                        .member__name Ковальчук Дмитрий
-                        .member__position.section-text Основатель Loftschool
-                  //- .quote
-                  //-   +icon('quote', 'quote-icon')
-                  .column-slider__block
-                    .column-slider__text.section-text
-                      p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .column-slider__member.member
-                      .avatar.member__avatar
-                        +image("content/vova.png", "avatar__pic")
-                      .member__info
-                        .member__name Владимир Сабанцев
-                        .member__position.section-text Преподаватель
-          section.contacts
-            .container
-              .contacts__title.section-title Связаться со мной
-              .contacts__form
-                form.form-elem
-                  .form__row
-                    label.form__block
-                      .form__title.section-text Введите ваше имя
-                      .input-block
-                        .input-icon
-                          +icon('user', 'form-icon')
-                        input.form__input(type="text", placeholder="Ковальчук Дмитрий")   
-                    label.form__block
-                      .form__title.section-text Введите ваш email
-                      .input-block
-                        .input-icon
-                          +icon('envelope', 'form-icon')
-                        input.form__input(type="text", placeholder="loftschool@study.com")
-                  .form__row
-                    label.form__block
-                      .form__title.section-text Сообщение к письму
-                      .input-block
-                        .input-icon
-                          +icon('message', 'form-icon')
-                        input.form__input(type="text", placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
-                  button.form__btn Отправить
-          footer.footer
-            .container.footer__container
-              .footer__first
-                .footer__year &copy 2019
-                .footer__user Перизат<br> Кожагельдина
-                .footer__desc Личный сайт<br> веб-разработчика
-              .footer__second
-                +menu(menu)
-                .footer__text
-                  .footer__info
-                    .footer__prolog Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-                      +socials(icons)
-                  .footer__advice
-                    .advice__text
-                      p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                    .advice__author Martin Golding
-                  
+          include template/reviews.pug                  
+          include template/contacts.pug                            
+          include template/footer.pug                            
+          
 

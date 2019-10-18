@@ -1,28 +1,33 @@
 .values {
     min-height: 960px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background: url("~images/content/bug.png") left -250px center / 700px 600px no-repeat;
+    display: grid;
+    align-self: center;
 }
 
 .values__container {
-    margin-left: 30%;
-    margin-bottom: 50px;
+    width: 70%;
+    display: grid;
+    grid-template-rows: 10% 20% 1fr;
+    grid-template-areas:
+    "values-title"
+    "values-text"
+    "values-content";
+    align-self: center;
+    align-items: center;
 }
 
 .values__title {
-    margin-bottom: 30px;
+    grid-area: values-title;
 }
 
 .values__desc {
-    width: 50%;
-    font-weight: 400;
+    grid-area: values-text;
 }
 
 .user-skills {
-    margin-left: 300px;
+    grid-area: values-content;
+    justify-self: center;
 }
 
 .skills-row {

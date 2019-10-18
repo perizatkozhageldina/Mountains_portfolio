@@ -1,105 +1,65 @@
 .footer {
     background-color: #1f232d;
-    height: 350px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     color: white;
-    padding-top: 50px;
+    min-height: 350px;
+    display: grid;
 }
 
 .footer__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    align-self: center;
+    align-items: start;
 }
 
 .footer__first {
-    width: 30%;
-    margin-right: 100px;
+   display: grid;
+   grid-template-rows: 1fr 1fr 1fr;
+   grid-row-gap: 30px;
+   align-items: start;
 }
 
 .footer__year {
     font-size: 48px;
     opacity: .1;
     font-weight: 400;
-    margin-bottom: 20px;
 }
 
 .footer__user {
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 30px;
 }
 
 .footer__desc {
-    opacity: .1;
+    opacity: .15;
 }
 
-.footer-nav {
-    margin-bottom: 70px;
-}
-
-.footer-nav__list {
-    display: flex;
-}
-
-.footer-nav__item {
-    margin-right: 60px;
-
-    &:last-child {
-        margin-right: 0;
-    }
-}
-
-.footer-nav__link {
-    text-decoration: none;
-}
-
-.footer__info {
-    margin-right: 60px;
-}
-
-.footer__prolog {
-    margin-bottom: 30px;
-    opacity: .1;
+.footer__second {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 1fr;
+    align-items: center;
+    grid-row-gap: 70px;
 }
 
 .footer__text {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.footer__socials {
-    display: flex;
-    margin-left: 15px;
+.footer__info {
+    display: grid;
+    grid-row-gap: 30px;
 }
 
-.footer__item {
-    margin-right: 50px;
-    position: relative;
-
-    &::before {
-        position: absolute;
-        top: -60%;
-        left: -80%;
-        content: "";
-        width: 50px;
-        height: 50px;
-        border: 1px solid white;
-        opacity: .1;
-        border-radius: 50%;
-    }
-}
-
-.footer__icon {
-    width: 20px;
-    height: 20px;
-    fill: white;
-    opacity: .1;
+.footer__prolog {
+    opacity: .3;
 }
 
 .advice__text {
+    opacity: .3;
     margin-bottom: 30px;
-    opacity: .1;
 }
 
 .advice__author {
