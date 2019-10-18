@@ -1,0 +1,24 @@
+.works {
+    min-height: 960px;
+    padding-bottom: 120px;
+    display: grid;
+    align-items: center;
+}
+
+.works__container {
+    display: grid;
+    grid-template-rows: 10% 1fr;
+    grid-template-areas:
+    "works-title"
+    "works-content";
+    grid-row-gap: 60px;
+
+}
+
+.works__title {
+    grid-area: works-title;
+}
+
+.works__content {
+    grid-area: works-content;
+}

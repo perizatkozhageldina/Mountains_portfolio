@@ -1,0 +1,125 @@
+.column-slider {
+    position: relative;
+    justify-self: start;
+    margin-left: 90px;
+}
+
+.column-slider__btns {
+    display: flex;
+    position: absolute;
+    top: -45%;
+    left: 45%;
+}
+
+.column-slider__btn {
+    position: relative;
+    background: none;
+    outline: none;
+    margin-right: 50px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 50px;     
+        border-radius: 50%;
+        border: 1px solid $text-color;
+    }
+
+    &--prev {
+        &::before {
+            top: -70%;
+            left: -70%;
+        }
+    }
+    
+    &--next {
+        &::before {
+            top: -70%;
+            left: -70%;
+        }
+    }
+}
+
+.column-slider-icon {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    fill: $text-color;
+
+    &--prev {
+        transform: rotate(-180deg);
+    }
+}
+
+.column-slider__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 130px;
+}
+
+.column-slider__block {
+    position: relative;
+    align-self: start;
+    display: grid;
+    grid-template-rows: minmax(100px, 1fr) 30%;
+    grid-template-areas: 
+    "column-slider-text"
+    "column-slider-member";
+    grid-row-gap: 70px;
+    align-items: start;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &::before {
+        content: "";
+        background: svg-load('quote.svg', fill=$text-color, width="70px", height="60px") no-repeat left top;
+        opacity: .3;
+        width: 70px;
+        height: 60px;
+        position: absolute;
+        left: -90px;
+    }
+}
+
+.column-slider__text {
+    grid-area: column-slider-text;
+    font-weight: 600;
+}
+
+.column-slider__member {
+    grid-area: column-slider-member;
+    display: flex;
+    align-items: center;
+}
+
+.member__avatar {
+    width: 75px;
+    height: 75px;
+    margin-right: 30px;
+}
+
+.member__name {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.member__info {
+}
+
+.quote {
+    margin-right: 20px;
+}
+
+.quote-icon {
+    width: 60px;
+    height: 70px;
+    fill: $text-color;
+    opacity: .05;
+}
