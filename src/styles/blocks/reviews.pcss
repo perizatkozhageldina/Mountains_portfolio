@@ -1,6 +1,7 @@
 .reviews {
-    min-height: 960px;
     display: grid;
+    padding-top: 120px;
+    margin-bottom: 100px;
 }
 
 .reviews__container {
@@ -17,6 +18,10 @@
 
 .reviews__title {
     grid-area: reviews-title;
+
+    @include phones {
+        text-align: center;
+    }
 }
 
 .reviews__content {

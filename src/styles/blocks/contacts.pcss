@@ -1,6 +1,7 @@
 .contacts {
-    min-height: 960px;
     display: grid;
+    margin-top: 150px;
+    margin-bottom: 120px;
 }
 
 .contacts__container {
@@ -9,4 +10,8 @@
     grid-row-gap: 40px;
     align-items: center;
     align-self: center;
+
+    @include tablets() {
+        text-align: center;
+    }
 }

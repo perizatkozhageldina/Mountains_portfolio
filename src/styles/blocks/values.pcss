@@ -1,33 +1,72 @@
 .values {
-    min-height: 960px;
-    background: url("~images/content/bug.png") left -250px center / 700px 600px no-repeat;
     display: grid;
     align-self: center;
+    position: relative;
+    padding-top: 120px;
+    
+    @include tablets() {
+        padding-bottom: 250px;
+    }
 }
 
 .values__container {
-    width: 70%;
     display: grid;
-    grid-template-rows: 10% 20% 1fr;
+    grid-template-rows: minmax(min-content, max-content) minmax(min-content, max-content) 1fr;
     grid-template-areas:
     "values-title"
     "values-text"
     "values-content";
     align-self: center;
     align-items: center;
+    grid-row-gap: 40px;
 }
 
 .values__title {
     grid-area: values-title;
+
+    @include tablets() {
+        text-align: center;
+    }
 }
 
 .values__desc {
     grid-area: values-text;
+
+    @include tablets() {
+        text-align: center;
+    }
 }
 
 .user-skills {
     grid-area: values-content;
     justify-self: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        background: url("~images/content/bug.png") no-repeat;
+        width: 600px;
+        height: 700px;
+        margin-left: -80%;
+    }
+
+    @include tablets() {
+        margin-bottom: 30px;
+
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            background: url("~images/content/bug.png") center center / contain no-repeat;
+            width: 70%;
+            height: 300px;
+            margin: 50px 20%;
+        }
+    }
 }
 
 .skills-row {
@@ -40,12 +79,21 @@
 
 .skills-row__list {
     display: flex;
+    flex-wrap: wrap;
+
+    @include phones() {
+        justify-content: center;
+    }
 }
 
 .skills-row__title {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 30px;
+    
+    @include tablets() {
+        text-align: center;
+    }
 }
 
 .skills-row__item {

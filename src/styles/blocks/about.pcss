@@ -1,6 +1,5 @@
 .about{
-    min-height: 960px;
-    padding-bottom: 120px;
+    padding-bottom: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +10,15 @@
     grid-template-columns: 1fr 2fr;
     grid-template-areas: 
     "left right";
+    grid-column-gap: 30px;
+    margin-right: 30px;
+
+    @include phones() {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "left"
+        "right";
+    }
 }
 
  .about__left {
@@ -60,12 +68,13 @@
 .about__right {
     grid-area: right;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 3fr;
+    grid-template-rows: 10% 20% minmax(30%, max-content) minmax(30%, max-content);
     grid-template-areas:
     "about-title"
     "about-name"
     "about-text"
     "about-ps";
+    grid-row-gap: 20px;
 }
 
 .about__title {

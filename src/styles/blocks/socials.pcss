@@ -2,6 +2,12 @@
     .socials__list {
         display: flex;
         align-items: center;
+        grid-area: header-links;
+        margin-right: 100px;
+
+        @include phones() {
+            display: none;
+        }
     }
 
     .socials__item {
@@ -23,14 +29,14 @@
             fill: $hover-color;
         }
     }
-
-    @include tablets {
-        display: none;
-    }
 }
 
 .footer__socials {
     margin-left: 20px;
+
+    @include tablets() {
+        margin-bottom: 30px;
+    }
     
     .socials__list {
         display: flex;

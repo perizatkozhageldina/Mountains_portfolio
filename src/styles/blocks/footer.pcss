@@ -1,38 +1,63 @@
 .footer {
     background-color: #1f232d;
     color: white;
-    min-height: 350px;
     display: grid;
+    padding-top: 30px;
+    min-height: 400px;
 }
 
 .footer__container {
     display: grid;
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: 20% 1fr;
     align-self: center;
     align-items: start;
+    grid-column-gap: 60px;
+
+    @include phones {
+        grid-template-columns: 1fr;
+        grid-column-gap: 0;
+        grid-row-gap: 60px;
+    }
 }
 
 .footer__first {
    display: grid;
-   grid-template-rows: 1fr 1fr 1fr;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   grid-template-areas:
+   "footer-year footer-username"
+   "footer-year footer-desc";
    grid-row-gap: 30px;
    align-items: start;
+
+   @include desktop {
+    grid-template-rows: 1fr 10% 10%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "footer-year"
+    "footer-username"
+    "footer-desc";
+   }
 }
 
 .footer__year {
     font-size: 48px;
     opacity: .1;
     font-weight: 400;
+    grid-area: footer-year;
 }
 
 .footer__user {
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
+    grid-area: footer-username;
+    align-self: start;
 }
 
 .footer__desc {
     opacity: .15;
+    grid-area: footer-desc;
 }
 
 .footer__second {
@@ -40,12 +65,22 @@
     grid-template-columns: 1fr;
     grid-template-rows: 20% 1fr;
     align-items: center;
-    grid-row-gap: 70px;
+    grid-row-gap: 30px;
 }
 
 .footer__text {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-row-gap: 30px;
+
+    @include tablets() {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    @include phones() {
+        grid-template-rows: 1fr 1fr;
+    }
 }
 
 .footer__info {

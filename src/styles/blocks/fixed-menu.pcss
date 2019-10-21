@@ -1,0 +1,12 @@
+.fixed-menu-item {
+    display: none;
+
+    @include tablets() {
+        display: block;
+        margin-right: 30px;
+        background: svg-load('menu-icon.svg', stroke=$text-color) no-repeat center center;
+        grid-area: header-links;        
+        width: 30px;
+        height: 30px;
+    }
+}
