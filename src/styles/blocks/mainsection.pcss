@@ -5,6 +5,11 @@
     "header"
     "mainsection"
     "mainsection-btns";
+    margin-bottom: 180px;
+
+    @include tablets() {
+        margin-bottom: 0;
+    }
 }
 
 .mainsection__header {
@@ -112,7 +117,7 @@
     grid-area: mainsection-btns;
     display: flex;
     justify-content: center;
-    padding: 50px 0;
+    margin: 50px 0;
 }
 
 .scroll-down-btns {

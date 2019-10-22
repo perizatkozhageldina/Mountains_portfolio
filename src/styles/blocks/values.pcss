@@ -19,6 +19,10 @@
     align-self: center;
     align-items: center;
     grid-row-gap: 40px;
+
+    @include tablets() {
+        grid-row-gap: 20px;
+    }
 }
 
 .values__title {

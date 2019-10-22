@@ -2,6 +2,14 @@
     display: flex;
     margin-top: -100px;
     color: white;
+
+    @include tablets() {
+        margin-top: -50px;
+    }
+
+    @include phones() {
+        margin-top: -25px;
+    }
 }
 
 .triangles--lightblue {
@@ -14,4 +22,12 @@
     display: block;
     height: 100px;
     fill: currentColor;
+
+    @include tablets() {
+        height: 50px;
+    }
+    
+    @include phones() {
+        height: 25px;
+    }
 }
