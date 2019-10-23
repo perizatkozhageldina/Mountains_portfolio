@@ -5,6 +5,10 @@
     top: 0;
     position: absolute;
     z-index: -1;
+
+    @include tablets() {
+        display: none;
+    }
 }
 
 .b-parallax__layer {
@@ -27,14 +31,22 @@
         .b-parallax__image {
             width: 100%;
             height: 100%;
-            top: 150px;
+            bottom: -100px;
+
+            @include desktop() {
+                bottom: -200px;
+            }
         }
     }
 
     &:nth-child(3) {
         .b-parallax__image {
             left: 0;
-            bottom: -500px;
+            bottom: -455px;
+
+            @include desktop() {
+                bottom: -500px;
+            }
         }
     }
 

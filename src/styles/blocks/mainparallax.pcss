@@ -5,6 +5,10 @@
     top: 0;
     position: absolute;
     z-index: -1;
+
+    @include tablets() {
+        display: none;
+    }
 }
 
 .parallax__layer {
@@ -69,7 +73,7 @@
 
     &:nth-child(7) {
         .parallax__image {
-            bottom: -700px;
+            bottom: -850px;
             left: 0;
             
             @include desktop() {
