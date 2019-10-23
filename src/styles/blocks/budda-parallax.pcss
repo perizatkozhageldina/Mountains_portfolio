@@ -1,4 +1,4 @@
-.mainparallax {
+.budda-parallax {
     height: 100%;
     width: 100%;
     left: 0;
@@ -7,7 +7,7 @@
     z-index: -1;
 }
 
-.parallax__layer {
+.b-parallax__layer {
     position: absolute;
     top: 0;
     left: 0;
@@ -16,7 +16,7 @@
     will-change: transform;
 
     &:nth-child(1) {
-        .parallax__image {
+        .b-parallax__image {
             object-fit: cover;
             width: 100%;
             height:  100%;
@@ -24,49 +24,50 @@
     }
 
     &:nth-child(2) {
-        .parallax__image {
-            right: 0;
-            top: 370px;
+        .b-parallax__image {
+            width: 100%;
+            height: 100%;
+            top: 150px;
         }
     }
 
     &:nth-child(3) {
-        .parallax__image {
-            left: 50%;
-            margin-left: 17%;
-            top: 500px;
+        .b-parallax__image {
+            left: 0;
+            bottom: -500px;
         }
     }
 
     &:nth-child(4) {
-        .parallax__image {
-            left: 0;
-            top: 560px;
+        .b-parallax__image {
+            right: 5%;
+            bottom: -900px;
         }
     }
 
     &:nth-child(5) {
-        .parallax__image {
+        .b-parallax__image {
             left: 0;
-            top: 660px;
+            bottom: -750px;
         }
     }
 
     &:nth-child(6) {
-        .parallax__image {
+        .b-parallax__image {
             right: 0;
-            bottom: -200px;
+            bottom: -850px;
         }
     }
 
     &:nth-child(7) {
-        .parallax__image {
-            bottom: -1000px;
-            left: 0;
+        .b-parallax__image {
+            right: 0;
+            bottom: -950px;
         }
     }
 }
 
-.parallax__image {
+.b-parallax__image {
     position: absolute;
+
 }

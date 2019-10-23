@@ -1,4 +1,4 @@
-const parallax = document.querySelector(".mainparallax");
+const parallax = document.querySelector(".budda-parallax");
 const layers = parallax.children;
 
 function moveLayers(wScroll) {
@@ -14,5 +14,10 @@ function moveLayers(wScroll) {
 
 window.addEventListener("scroll", e=> {
     const wScroll = window.pageYOffset;
-    moveLayers(wScroll);
+
+    const position = document.querySelector(".budda-section").offsetTop - 200;
+
+    if (wScroll >= position) {
+        moveLayers(wScroll);
+    }
 });

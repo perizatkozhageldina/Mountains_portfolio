@@ -1,12 +1,12 @@
 .column-slider {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 40% 40%;
     grid-template-rows: 20% 1fr;
     grid-template-areas:
     "column-slider-title column-slider-btn"
     "column-slider-content column-slider-content";
     grid-row-gap: 60px;
-    grid-column-gap: 30px;
+    grid-column-gap: 10px;
 
     @include phones() {
         grid-template-columns: 1fr;

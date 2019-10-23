@@ -1,0 +1,22 @@
+form.form-elem
+    .form__row
+        label.form__block
+            .form__title.section-text Введите ваше имя
+            .input-block
+                .input-icon
+                    +icon('user', 'form-icon')
+                input.form__input(type="text", placeholder="Ковальчук Дмитрий")   
+        label.form__block
+            .form__title.section-text Введите ваш email
+            .input-block
+                .input-icon
+                    +icon('envelope', 'form-icon')
+                input.form__input(type="text", placeholder="loftschool@study.com")
+    .form__row
+        label.form__block
+            .form__title.section-text Сообщение к письму
+            .input-block
+                .input-icon
+                    +icon('message', 'form-icon')
+                textarea.form__input.form__input--textarea(type="text", placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
+    button.form__btn Отправить

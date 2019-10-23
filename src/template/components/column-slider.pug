@@ -1,0 +1,26 @@
+.column-slider
+    .section-title.column-slider__title Что обо мне говорят
+    .column-slider__btns
+        button.column-slider__btn.column-slider__btn--prev  
+            +icon('arrow-down', 'column-slider-icon column-slider-icon--prev')
+        button.column-slider__btn.column-slider__btn--next
+            +icon('arrow-down', 'column-slider-icon column-slider-icon--next')
+    .column-slider__content
+        .column-slider__block
+            .column-slider__text.section-text
+                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+            .column-slider__member.member
+                .avatar.member__avatar
+                    +image("content/dima.png", "avatar__pic")
+                .member__info
+                    .member__name Ковальчук Дмитрий
+                    .member__position.section-text Основатель Loftschool
+        .column-slider__block
+            .column-slider__text.section-text
+                p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+            .column-slider__member.member
+                .avatar.member__avatar
+                    +image("content/vova.png", "avatar__pic")
+                .member__info
+                    .member__name Владимир Сабанцев
+                    .member__position.section-text Преподаватель

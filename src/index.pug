@@ -10,13 +10,15 @@ html(lang="en")
     .wrapper
       .maincontent
         .welcome-section
-          include ./template/mainsection
-          include ./template/about
-        include ./template/values              
-        include ./template/works      
+          include ./template/sections/mainsection
+          include ./template/sections/about
+          include ./template/components/mainparallax
+        include ./template/sections/values              
+        include ./template/sections/works      
         .budda-section
-          include ./template/reviews                
-          include ./template/contacts                         
-          include ./template/footer
+          include ./template/sections/reviews                
+          include ./template/sections/contacts 
+          include ./template/components/budda-parallax
+        include ./template/components/footer
 
       //- include ./template/entry
