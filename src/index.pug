@@ -10,24 +10,13 @@ html(lang="en")
     .wrapper
       .maincontent
         .welcome-section
-          include template/mainsection.pug
-          include template/about.pug
-        .triangles
-          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-            polygon(points="0, 0 0, 100 1000, 100")
-          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-            polygon(points="0, 100 1000, 100 1000, 0")
-        include template/values.pug                
-        include template/works.pug        
-        .triangles.triangles--lightblue
-          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-            polygon(points="0, 0 0, 100 1000, 100")
-          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-            polygon(points="0, 100 1000, 100 1000, 0")
+          include ./template/mainsection
+          include ./template/about
+        include ./template/values              
+        include ./template/works      
         .budda-section
-          include template/reviews.pug                  
-          include template/contacts.pug                            
-          include template/footer.pug      
-        include template/fixed-menu.pug                      
-          
+          include ./template/reviews                
+          include ./template/contacts                         
+          include ./template/footer
 
+      //- include ./template/entry

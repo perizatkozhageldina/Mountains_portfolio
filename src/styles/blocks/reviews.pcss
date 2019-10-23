@@ -1,33 +1,10 @@
 .reviews {
     display: grid;
+    align-items: center;
     padding-top: 130px;
     padding-bottom: 200px;
 }
 
 .reviews__container {
-    display: grid;
-    grid-template-rows: 20% 1fr;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-    "reviews-title"
-    "reviews-content";
-    align-items: center;
-    align-self: center;
-    grid-row-gap: 60px;
-}
-
-.reviews__title {
-    grid-area: reviews-title;
-
-    @include tablets() {
-        margin-bottom: 60px;
-    }
-
-    @include phones {
-        text-align: center;
-    }
-}
-
-.reviews__content {
-    grid-area: reviews-content;
+    width: 80%;
 }

@@ -1,27 +1,40 @@
 .column-slider {
-    position: relative;
-    justify-self: start;
-    margin-left: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20% 1fr;
+    grid-template-areas:
+    "column-slider-title column-slider-btn"
+    "column-slider-content column-slider-content";
+    grid-row-gap: 60px;
+    grid-column-gap: 30px;
 
     @include phones() {
-        margin-left: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 10% 1fr;
+        grid-template-areas:
+        "column-slider-title"
+        "column-slider-btn"
+        "column-slider-content";
+        grid-row-gap: 30px;
+        grid-column-gap: 0;
+    }
+}
+
+.column-slider__title {
+    grid-area: column-slider-title;
+    align-self: center;
+
+    @include phones() {
+        justify-self: center;
     }
 }
 
 .column-slider__btns {
     display: flex;
-    position: absolute;
-    top: -45%;
-    left: 30%;
-
-    @include tablets() {
-        top: -43%;
-        left: 40%;
-    }
+    grid-area: column-slider-btn;
 
     @include phones() {
-        top: -15%;
-        left: 35%;
+        justify-self: center;
     }
 }
 
@@ -46,15 +59,25 @@
 
     &--prev {
         &::before {
-            top: -70%;
-            left: -70%;
+            top: 15%;
+            left: -60%;
+
+            @include phones() {
+                top: 0;
+                left: -50%;
+            }
         }
     }
     
     &--next {
         &::before {
-            top: -70%;
-            left: -70%;
+            top: 15%;
+            left: -60%;
+
+            @include phones() {
+                top: 0;
+                left: -50%;
+            }
         }
     }
 }
@@ -71,8 +94,10 @@
 }
 
 .column-slider__content {
+    margin-left: 90px;
+    grid-area: column-slider-content;
     display: grid;
-    grid-template-columns: 30% 30%;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 130px;
 
     @include tablets {
@@ -81,6 +106,7 @@
 
     @include phones {
         grid-template-columns: 1fr;
+        margin-left: 0;
     }
 }
 
@@ -115,6 +141,7 @@
 
     @include phones() {
         margin-bottom: 30px;
+        grid-row-gap: 30px;
 
         &:last-child {
             margin-bottom: 0;
