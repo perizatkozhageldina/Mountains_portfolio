@@ -49,20 +49,32 @@
         .parallax__image {
             left: 0;
             top: 660px;
+
+            @include desktop() {
+                top: 800px;
+            }
         }
     }
 
     &:nth-child(6) {
         .parallax__image {
             right: 0;
-            bottom: -200px;
+            bottom: -300px;
+
+            @include desktop() {
+                bottom: -100px;
+            }
         }
     }
 
     &:nth-child(7) {
         .parallax__image {
-            bottom: -1000px;
+            bottom: -700px;
             left: 0;
+            
+            @include desktop() {
+                bottom: -500px;
+            }
         }
     }
 }
