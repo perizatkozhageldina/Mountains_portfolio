@@ -16,7 +16,7 @@
     }
 }
 
-.slider__left {
+.slider__pic {
     grid-area: slider-left;
     position: relative;
     height: fit-content;
@@ -100,8 +100,8 @@
         }
     }
 
-    &--active {
-        outline: 2px solid $hover-color;
+    &.active {
+        border: 3px solid #dc9322;
     }
 }
 
@@ -116,7 +116,7 @@
     }
 }
 
-.slider__right {
+.slider__data {
     grid-area: slider-right;
     display: grid;
     grid-template-rows: 20% minmax(min-content, max-content) minmax(min-content, max-content) 10%;
@@ -177,4 +177,15 @@
 
 .slider__link {
     grid-area: slider-link;
+    position: relative;
+    margin-left: 25px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        margin-left: -25px;
+        background: svg-load('link.svg', fill=$text-color, width="20px", height="20px") no-repeat left center;
+    }
 }

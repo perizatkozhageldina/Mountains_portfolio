@@ -9,15 +9,27 @@ function moveLayers(wScroll) {
 
         layer.style.transform = `translateY(-${strafe}%)`;
     });
+}
 
+function getOffsets(block) {
+    var element = document.querySelector('.'+block),
+    
+    rect = element.getBoundingClientRect();
+    return rect;
 }
 
 window.addEventListener("scroll", e=> {
-    const wScroll = window.pageYOffset;
 
-    const position = document.querySelector(".budda-section").offsetTop - 200;
+    var bottomOffset = getOffsets('contacts').top;
+    console.log(bottomOffset);
 
-    if (wScroll >= position) {
-        moveLayers(wScroll);
-    }
+    if (bottomOffset < 0) {
+        this.move(pf1, bottomOffset, 300);
+        this.move(pf2, bottomOffset, 150);
+        this.move(pf3, bottomOffset, 400);
+        this.move(pf4, bottomOffset, 250);
+        this.move(pf5, bottomOffset, 100);
+    };
+
+    moveLayers(wScroll);
 });

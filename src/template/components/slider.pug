@@ -1,28 +1,52 @@
-.slider
-    .slider__left
-        .slider__photo
-            +image('content/mainslide.png', 'slider__fullpic')
-        .slider__preview
-            ul.previews 
-            - var sliderImages = ['content/slide1.png', 'content/slide2.png', 'content/slide3.png']
-                li.previews__items
-                each sliderImage in sliderImages
-                    +image(`${sliderImage}`, 'previews__pic')
-        .slider__btns
-            .slider-buttons
+script(type="text/x-template")#slider-container
+    .slider
+        display(
+            :works="works"
+            :current-work="currentWork"
+        )
+        info(
+            :current-work="currentWork"
+        )
+
+script(type="text/x-template")#slider-display
+    .slider__pic
+        .slider__content
+            .slider__photo
+                img(:src="currentWork.photo").slider__fullpic
+            thumbs(
+                :works="works"
+                :current-work="currentWork"
+            )
+            btns()
+
+script(type="text/x-template")#slider-thumbs
+    .slider__preview
+        ul.previews 
+            li.previews__items(
+                v-for="work in works"
+                :key=" work.id"
+                :class="{active: work.id=== currentWork.id}"
+                )
+                a.previews__link
+                    img(:src="work.photo" alt="").previews__pic
+    
+script(type="text/x-template")#slider-btns
+    .slider__btns
+        .slider-buttons
             button.slider-button.slider-button--slide--prev
                 +icon('arrow-down', 'prev__icon')
             button.slider-button.slider-button--slide--next
                 +icon('arrow-down', 'prev__icon prev__icon--next')
-    .slider__right
-        .slider__tags
-            - var tags = ['html', 'css', 'javascript']
-            ul.tags__list
-                each tag in tags
-                    li.tags__item #{tag}
-        h3.slider__title Сайт школы образования
+
+script(type="text/x-template")#slider-info
+    .slider__data
+        tags()
+        h3.slider__title {{currentWork.title}}
         .slider__desc.section-text
-            p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-        a.slider__link.viewlink
-            +icon("link", "viewlink__icon")
-            .viewlink__text Посмотреть сайт
+            p {{currentWork.text}}
+        a(:href="currentWork.link").slider__link Посмотреть сайт
+
+script(type="text/x-template")#slider-tags
+    .slider__tags
+        ul.tags__list
+            li.tags__item

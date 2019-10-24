@@ -1,20 +1,26 @@
-ul.skills__list
-    -
-        var skills = [
-            ['Frontend', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
-            ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']]
-        ]
-    each item in skills
-        li.user-skills__item.skills-row
-            h3.skills-row__title #{item[0]}
+script(type="text/x-template")#skills-list
+    ul.skills__list
+        li.skills__item(v-for="skill in skills" :key="skill.skillsGroup")
+            skills-row(
+                :skill="skill"
+            )
+
+script(type="text/x-template")#skills-row
+        .skills-row
+            h3.skills-row__title {{skill.skillsGroup}}
             ul.skills-row__list
-                each skill in item[1]
-                    li.skills-row__item
-                        .skill
-                            svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                                circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-under
-                                circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-above
-                                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                                    stop(offset="0%" stop-color="#9300e8")
-                                    stop(offset="100%" stop-color="#4a00ed")
-                            .skill__title #{skill}
+                li.skills-row__item(v-for="(skillPercent, skillName) in skill.skills")
+                    skill(
+                        :skill-name="skillName"
+                        :skill-percent="skillPercent"
+                    )
+
+script(type="text/x-template")#skill
+    .skill
+        svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
+            circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position-under
+            circle(r="80" cx="100" cy="100" ref="color-circle").skill__circle.skill__circle--position-above
+            linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+                stop(offset="0%" stop-color="#9300e8")
+                stop(offset="100%" stop-color="#4a00ed")
+        .skill__title {{skillName}}
