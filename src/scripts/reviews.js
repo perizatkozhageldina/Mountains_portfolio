@@ -1,30 +1,48 @@
+import Vue from "vue";
 import Flickity from 'vue-flickity';
 
+const reviewsBlock = {
+    template: "#reviews-block",
+    props: ["review"]
+};
+
 new Vue({
-  components: {
-    Flickity
-  },
-  
-  data() {
-    return {
-      flickityOptions: {
-        initialIndex: 0,
-        prevNextButtons: true,
-        pageDots: false,
-        wrapAround: true
-        
-        // any options from Flickity can be used
-      }
-    }
-  },
-  
-  methods: {
-    next() {
-      this.$refs.flickity.next();
+    el: "#reviews-slider-component",
+    template: "#reviews-slider",
+    data: () => ({
+        reviews: [],
+        flickityOptions: {
+            initialIndex: 1,
+            prevNextButtons: false,
+            pageDots: false,
+            wrapAround: true,
+            groupCells: 2
+            // any options from Flickity can be used
+        }
+    }),
+    methods: {
+        makeArrayWithRequiredImages(data) {
+            return data.map(item=> {
+                const requiredPic = require(`../images/content/${item.photo}`)
+                item.photo = requiredPic;
+
+                return item;
+            });
+        },
+        next() {
+            this.$refs.flickity.next();
+          },
+          
+          previous() {
+            this.$refs.flickity.previous();
+        }
     },
-    
-    previous() {
-      this.$refs.flickity.previous();
+    components:  { 
+        reviewsBlock,
+        Flickity
+    },
+    created() {
+        const data = require("../data/reviews.json");
+        this.reviews = this.makeArrayWithRequiredImages(data);
     }
-  }
 });

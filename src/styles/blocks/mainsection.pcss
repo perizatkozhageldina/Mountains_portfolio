@@ -1,11 +1,15 @@
+.mainsection {
+    height: 100vh;
+}
+
 .mainsection__container {
+    height: 100%;
     display: grid;
-    grid-template-rows: 10% 1fr 15%;
+    grid-template-rows: 10% 1fr 20%;
     grid-template-areas:
     "header"
     "mainsection"
     "mainsection-btns";
-    margin-bottom: 180px;
 
     @include tablets() {
         margin-bottom: 0;
