@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Flickity from 'vue-flickity';
 
-const reviewsBlock = {
-    template: "#reviews-block",
+const reviewBlock = {
+    template: "#review-block",
     props: ["review"]
 };
 
@@ -38,7 +38,7 @@ new Vue({
         }
     },
     components:  { 
-        reviewsBlock,
+        reviewBlock,
         Flickity
     },
     created() {

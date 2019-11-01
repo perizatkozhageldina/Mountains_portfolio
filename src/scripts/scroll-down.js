@@ -1,10 +1,6 @@
-// $(document).ready(function(){
+var element = document.querySelector('.about');
+var btn = document.getElementById('scroll-down-btn');
 
-//     $('.scroll-down-btn').on('click', function(e) {
-//         $this = $(this);
-//         $this.animate({
-//             scrollTop: 100%
-//         }, 1500);
-//     });
-
-// });
+btn.addEventListener('click', function(e) {
+    element.scrollIntoView({block: "end", behavior: "smooth"});
+});
