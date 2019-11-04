@@ -10,7 +10,7 @@
 .reviews {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 20% 1fr;
+    grid-template-rows: 30% 1fr;
     grid-template-areas:
     "reviews-header"
     "reviews-content";
@@ -18,7 +18,6 @@
     grid-column-gap: 10px;
 
     @include phones() {
-        grid-template-rows: 10% 10% 1fr;
         grid-template-areas:
         "reviews-header"
         "reviews-content";
@@ -30,6 +29,13 @@
 .reviews__header {
     grid-area: reviews-header;
     display: flex;
+    align-items: center;
+
+    @include phones() {
+        justify-self: center;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .reviews__title {
@@ -37,6 +43,7 @@
 
     @include phones() {
         justify-self: center;
+        margin-bottom: 20px;
     }
 }
 
@@ -49,8 +56,8 @@
     }
 
     @include phones() {
-        flex-direction: column;
-        margin-top: 50px;
+        flex-direction: row;
+        margin-left: 0;
     }
 }
 
@@ -75,25 +82,15 @@
 
     &--prev {
         &::before {
-            top: 15%;
-            left: -60%;
-
-            @include phones() {
-                top: 0;
-                left: -50%;
-            }
+            top: -50%;
+            left: -50%;
         }
     }
     
     &--next {
         &::before {
-            top: 15%;
-            left: -60%;
-
-            @include phones() {
-                top: 0;
-                left: -50%;
-            }
+            top: -50%;
+            left: -50%;
         }
     }
 }
@@ -118,6 +115,7 @@
     width: 50%;
 
     @include phones() {
+        width: 100%;
         margin-bottom: 30px;
         grid-row-gap: 30px;
         margin-left: 0;
@@ -131,7 +129,7 @@
         content: "";
         background: svg-load('quote.svg', fill=$text-color, width="70px", height="60px") no-repeat left top;
         opacity: .05;
-        width: 70px;
+        width: 80px;
         height: 60px;
         position: absolute;
 
@@ -157,6 +155,10 @@
     font-weight: 600;
     padding-left: 90px;
     padding-right: 10px;
+
+    @include phones() {
+        padding: 0;
+    }
 }
 
 .reviews__member {
