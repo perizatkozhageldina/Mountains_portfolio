@@ -13,14 +13,21 @@ new Vue({
         reviews: [],
         flickityOptions: {
             initialIndex: 0,
-            prevNextButtons: false,
+            prevNextButtons: true,
             pageDots: false,
-            wrapAround: true,
+            wrapAround: false,
             groupCells: true,
-            contain: true
         }
     }),
     methods: {
+        onInit() {
+            this.$refs.flickity.on('change', (event) => {
+              this.currentIndex = event
+      
+            if (!this.$refs.flickity.$flickity.nextButton.isEnabled)
+                this.currentIndex = this.reviews.length
+            })
+        },
         makeArrayWithRequiredImages(data) {
             return data.map(item=> {
                 const requiredPic = require(`../images/content/${item.photo}`)

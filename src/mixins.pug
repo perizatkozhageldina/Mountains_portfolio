@@ -11,7 +11,7 @@ mixin menu(menu)
     ul.nav__list
       each item in menu
         li.nav__item
-          a(href="").nav__link #{item}
+          a(href=item[1]).nav__link #{item[0]}
 
 mixin socials(icons)
   ul.socials__list

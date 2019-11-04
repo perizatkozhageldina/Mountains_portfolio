@@ -61,11 +61,34 @@
     right: 0%;
     cursor: pointer;
     width: 20%;
+
+    @include phones() {
+        display: none;
+    }
 }
 
 .previews__item {
+    position: relative;
+
     &.active {
-        border: 3px solid #dc9322;
+        border: 3px solid $hover-color;
+    }
+}
+
+.previews__link {
+    &:hover {
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            background: $hover-color;
+            z-index: 2;
+            opacity: .4;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
     }
 }
 
@@ -75,10 +98,6 @@
 
     @include tablets() {
         max-width: 180px;
-    }
-
-    @include phones() {
-        display: none;
     }
 
     &:hover {
@@ -100,6 +119,11 @@
     position: absolute;
     top: 100%;
     right: 0%;
+
+    @include phones() {
+        top: unset;
+        bottom: 0;
+    }
 }
 
 .slider-button {
@@ -198,5 +222,10 @@
         height: 35px;
         margin-left: -30px;
         background: svg-load('link.svg', fill=$text-color, width="20px", height="20px") no-repeat left center;
+    }
+
+    &:hover {
+        color: $hover-color;
+        font-weight: bold;
     }
 }

@@ -72,6 +72,7 @@
 
     &--textarea {
         resize: vertical;
+        overflow: hidden;
     }
 }
 
@@ -96,12 +97,16 @@
     height: 80px;
     border-radius: 40px 0;
     background-color: #ffffff;
-    background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
+    background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 70%);
     color: white;
     font-weight: bold;
     outline: none;
     font-size: 18px;
     text-transform: uppercase;
+
+    &:hover {
+        background-image: linear-gradient(to right, #9300e8 20%, #4a00ed 100%);
+    }
 
     @include phones() {
         width: 250px;

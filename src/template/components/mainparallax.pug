@@ -1,15 +1,29 @@
 .mainparallax
     .parallax__layer(data-speed="0.1")
-        +image('parallax/sky.png', 'parallax__image')
+        picture 
+            source(media='(min-width: 768px)', srcset=require(`images/parallax/sky.png`)).parallax__image
+            +image('parallax/sky.png', 'parallax__image')
     .parallax__layer(data-speed="0.2")
+        picture
+            source(media='(min-width: 768px)', srcset=require(`images/parallax/mountain.png`)).parallax__image
         +image('parallax/mountain.png', 'parallax__image')
     .parallax__layer(data-speed="0.3")
+        picture
+            source(media='(min-width: 768px)', srcset=require(`images/parallax/baloon.png`)).parallax__image
         +image('parallax/baloon.png', 'parallax__image')
     .parallax__layer(data-speed="0.4")
+        picture
+            source(media='(min-width: 768px)', srcset=require(`images/parallax/cloud.png`)).parallax__image
         +image('parallax/cloud.png', 'parallax__image')
     .parallax__layer(data-speed="0.5")
+        picture
+            source(media='(min-width: 768px)', srcset=require(`images/parallax/man.png`)).parallax__image
         +image('parallax/man.png', 'parallax__image')
     .parallax__layer(data-speed="0.6")
+        picture
+            source(media='(min-width: 768px)', srcset=require(`images/parallax/mountain1.png`)).parallax__image
         +image('parallax/mountain1.png', 'parallax__image')
     .parallax__layer(data-speed="0.7")
+        picture
+            source(media='(min-width: 768px)', srcset=require(`images/parallax/white.png`)).parallax__image
         +image('parallax/white.png', 'parallax__image')

@@ -1,6 +1,5 @@
 .mainsection {
     height: 100vh;
-    position: relative;
 }
 
 .mainsection__container {
@@ -23,7 +22,7 @@
     align-items: center;
     justify-items: center;
     display: grid;
-    grid-template-columns: 10% 1fr 15%;
+    grid-template-columns: 10% 1fr 20%;
     grid-template-areas:
     "logo header-menu header-links";
 
@@ -130,6 +129,7 @@
 }
 
 .scroll-down-btns {
+    cursor: pointer;
     font-weight: bold;
     align-self: center;
     justify-self: center;
@@ -153,7 +153,6 @@
 }
 
 .scroll-icon {
-    cursor: pointer;
     fill: $text-color;
     width: 30px;
     height: 30px;

@@ -3,9 +3,9 @@ script(type="text/x-template")#reviews-slider
         .reviews__header
             .section-title.reviews__title Что обо мне говорят
             .reviews__btns
-                button(@click="previous()").reviews__btn.reviews__btn--prev  
+                button(@click="previous()" :disabled="currentIndex === 0" :class="{disabled: currentIndex === 0}").reviews__btn.reviews__btn--prev  
                     +icon('arrow-down', 'reviews-icon reviews-icon--prev')
-                button(@click="next()").reviews__btn.reviews__btn--next
+                button(@click="next()" :disabled="reviews.length === currentIndex" :class="{disabled: reviews.length === currentIndex}").reviews__btn.reviews__btn--next
                     +icon('arrow-down', 'reviews-icon reviews-icon--next')
         .reviews__content
             flickity(ref="flickity" :options="flickityOptions")
