@@ -17,7 +17,8 @@ new Vue({
             pageDots: false,
             wrapAround: false,
             groupCells: true,
-        }
+        },
+        currentIndex: 0
     }),
     methods: {
         onInit() {
