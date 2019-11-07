@@ -9,7 +9,7 @@ const reviewBlock = {
 new Vue({
     el: "#reviews-slider-component",
     template: "#reviews-slider",
-    data: () => ({
+    data: {
         reviews: [],
         flickityOptions: {
             initialIndex: 0,
@@ -18,8 +18,8 @@ new Vue({
             wrapAround: false,
             groupCells: true,
         },
-        currentIndex: 0
-    }),
+        currentIndex: 1
+    },
     methods: {
         onInit() {
             this.$refs.flickity.on('change', (event) => {
@@ -35,14 +35,14 @@ new Vue({
                 item.photo = requiredPic;
 
                 return item;
-            });
+            })
         },
         next() {
-            this.$refs.flickity.next();
+            this.$refs.flickity.next()
           },
           
           previous() {
-            this.$refs.flickity.previous();
+            this.$refs.flickity.previous()
         }
     },
     components:  { 

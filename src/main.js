@@ -9,4 +9,5 @@ import "./scripts/scroll-down";
 import "./scripts/skills";
 import "./scripts/works";
 import "./scripts/reviews";
+import "./scripts/form";
 import "./scripts/budda-parallax";

@@ -21,18 +21,10 @@
 
 .form__block {
     margin-right: 50px;
-    border-bottom: 2px solid $text-color;
     flex: 1;
 
     &:last-child {
         margin-right: 0;
-    }
-
-    &:hover {
-        .form-icon {
-            fill: $hover-color;
-            opacity: 1;
-        }
     }
 
     @include phones() {
@@ -49,7 +41,21 @@
 
 .input-block {
     display: flex;
+    border-bottom: 2px solid rgba($text-color, .5);
     padding-bottom: 10px;
+
+    &:hover {
+        .form-icon {
+            fill: $hover-color;
+            opacity: 1;
+        }
+        
+        border-bottom-color: $hover-color;
+    }
+}
+
+.input-error {
+    position: relative;
 }
 
 .form__input {
@@ -67,6 +73,7 @@
         font-size: 18px;
         font-weight: bold;
         color: $text-color;
+        opacity: 1;
 
     }
 

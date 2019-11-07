@@ -9,7 +9,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = './';
+  const publicPath = '/Mountains_portfolio/';
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -68,7 +68,7 @@ module.exports = (env, argv) => {
         }
       }
     ]
-  };
+  }
 
   const pug = {
     test: /\.pug$/,
@@ -81,12 +81,12 @@ module.exports = (env, argv) => {
         use: ["pug-loader"]
       }
     ]
-  };
+  }
 
   const config = {
     entry: {
-      main: "./src/main.js",
-      admin: "./src/admin/main.js"
+      main: ['@babel/polyfill', './src/main.js'],
+      admin: './src/admin/main.js'
     },
     output: {
       path: path.resolve(__dirname, "./dist"),

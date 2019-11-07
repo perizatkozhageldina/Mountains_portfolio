@@ -1,22 +1,56 @@
-form.form-elem
-    .form__row
-        label.form__block
-            .form__title.section-text Введите ваше имя
-            .input-block
-                .input-icon
-                    +icon('user', 'form-icon')
-                input.form__input(type="text", placeholder="Ковальчук Дмитрий")   
-        label.form__block
-            .form__title.section-text Введите ваш email
-            .input-block
-                .input-icon
-                    +icon('envelope', 'form-icon')
-                input.form__input(type="text", placeholder="loftschool@study.com")
-    .form__row
-        label.form__block
-            .form__title.section-text Сообщение к письму
-            .input-block
-                .input-icon
-                    +icon('message', 'form-icon')
-                textarea.form__input.form__input--textarea(type="text", placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
-    button.form__btn Отправить
+script(type="text/x-template")#contact-form-template
+    form.form-elem(@submit.prevent="sendMessage")
+        .form__row
+            label.form__block(
+                :class="{'error' : validation.firstError('user.name')}"
+            )
+                .form__title.section-text Введите ваше имя
+                .input-block
+                    .input-icon
+                        +icon('user', 'form-icon')
+                    input.form__input(
+                        type="text"
+                        name="name"
+                        placeholder="Ковальчук Дмитрий"
+                        v-model="user.name"
+                    )
+                .input-error
+                    error-tooltip(
+                        :errorText="validation.firstError('user.name')"
+                    ) 
+            label.form__block(
+                :class="{'error' : validation.firstError('user.email')}"                
+            )
+                .form__title.section-text Введите ваш email
+                .input-block
+                    .input-icon
+                        +icon('envelope', 'form-icon')
+                    input.form__input(
+                        type="text"
+                        name="email"
+                        placeholder="loftschool@study.com"
+                        v-model="user.email"
+                    )
+                .input-error
+                    error-tooltip(
+                        :errorText="validation.firstError('user.email')"
+                    )
+        .form__row
+            label.form__block(
+                :class="{'error' : validation.firstError('user.message')}"
+            )
+                .form__title.section-text Сообщение к письму
+                .input-block
+                    .input-icon
+                        +icon('message', 'form-icon')
+                    textarea.form__input.form__input--textarea(
+                        type="text"
+                        name="message"
+                        placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса"
+                        v-model="user.message"
+                    )
+                .input-error
+                    error-tooltip(
+                        :errorText="validation.firstError('user.message')"
+                    )
+        button(type="submit").form__btn Отправить
