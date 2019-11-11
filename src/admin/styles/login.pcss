@@ -1,0 +1,139 @@
+.login-page {
+    background: url('~images/content/mountain.png') center center / cover no-repeat;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $text-color;
+    z-index: -2;
+
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: $text-color;
+        opacity: .7;
+        z-index: -1;
+    }
+}
+
+.login-form {
+    width: 560px;
+    height: 520px;
+    background: #fff;
+    display: grid;
+    grid-template-rows: 10% 1fr;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+
+    @include phones {
+        width: 85%;
+        height: 80%;
+    }
+}
+
+.close-btn {
+    width: 30px;
+    height: 30px;
+    background: svg-load('close.svg', fill=$text-color, width="25px", height="25px") no-repeat left top;
+    justify-self: end;
+    align-self: start;
+    margin: 20px;
+}
+
+.auth {
+    display: grid;
+    grid-row-gap: 30px;
+    justify-items: center;
+    width: 80%;
+}
+
+.auth__title {
+    font-size: 36px;
+    text-align: center;
+}
+
+.form__block {
+    width: 100%;
+}
+
+.form__title {
+    padding-left: 50px;
+    color: rgba($text-color, .5);
+}
+
+.input-block {
+    display: flex;
+    border-bottom: 2px solid rgba($text-color, .5);
+    padding-bottom: 10px;
+
+    &:hover {
+        .input-icon {
+            fill: $hover-color;
+            opacity: 1;
+        }
+
+        border-bottom-color: $hover-color;
+    }
+}
+
+.input-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.input-icon--login {
+    background: svg-load('user.svg', fill=rgba($text-color, .5), width="25px", height="25px") no-repeat left top;
+}
+
+.input-icon--pass {
+    background: svg-load('key.svg', fill=rgba($text-color, .5), width="25px", height="25px") no-repeat left top;
+}
+
+.form__input {
+    outline: none;
+    border:  none;
+    font-size: 18px;
+    font-weight: bold;
+    color: $text-color;
+    opacity: 1;
+
+    &::placeholder {
+        font-size: 18px;
+        font-weight: bold;
+        color: $text-color;
+        opacity: 1;
+
+    }
+}
+
+.auth-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 80px;
+    border-radius: 40px 0;
+    background-color: #ffffff;
+    background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 70%);
+    color: white;
+    font-weight: bold;
+    outline: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 20px;
+
+    &:hover {
+        background-image: linear-gradient(to right, #9300e8 20%, #4a00ed 100%);
+    }
+
+    @include phones {
+        width: 250px;
+    }
+}

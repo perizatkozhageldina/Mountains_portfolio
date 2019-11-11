@@ -14,10 +14,10 @@ script(type="text/x-template")#contact-form-template
                         placeholder="Ковальчук Дмитрий"
                         v-model="user.name"
                     )
-                .input-error
-                    error-tooltip(
-                        :errorText="validation.firstError('user.name')"
-                    ) 
+                    .input-error
+                        error-tooltip(
+                            :errorText="validation.firstError('user.name')"
+                        ) 
             label.form__block(
                 :class="{'error' : validation.firstError('user.email')}"                
             )
@@ -31,10 +31,10 @@ script(type="text/x-template")#contact-form-template
                         placeholder="loftschool@study.com"
                         v-model="user.email"
                     )
-                .input-error
-                    error-tooltip(
-                        :errorText="validation.firstError('user.email')"
-                    )
+                    .input-error
+                        error-tooltip(
+                            :errorText="validation.firstError('user.email')"
+                        )
         .form__row
             label.form__block(
                 :class="{'error' : validation.firstError('user.message')}"
@@ -49,8 +49,8 @@ script(type="text/x-template")#contact-form-template
                         placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса"
                         v-model="user.message"
                     )
-                .input-error
-                    error-tooltip(
-                        :errorText="validation.firstError('user.message')"
-                    )
+                    .input-error
+                        error-tooltip(
+                            :errorText="validation.firstError('user.message')"
+                        )
         button(type="submit").form__btn Отправить

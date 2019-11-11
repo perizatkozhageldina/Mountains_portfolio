@@ -1,0 +1,28 @@
+.tabs__list {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+.tabs__item {
+    width: 100px;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+
+    &:hover, &.active {
+        color: $hover-color;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50px;
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: $hover-color;
+        }
+    }
+}

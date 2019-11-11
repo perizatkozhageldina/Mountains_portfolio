@@ -76,6 +76,5 @@ new Vue({
   },
   updated() {
    console.log(this.validation)
-    
   }
 })
