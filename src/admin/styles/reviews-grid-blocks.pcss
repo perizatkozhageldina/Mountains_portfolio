@@ -1,0 +1,58 @@
+.reviews-grid-blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+}
+
+.reviews-grid__add-block {
+    cursor: pointer;
+    height: 380px;
+    background-image: linear-gradient(to right, #1f50dc 0%, #3f35cb 70%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px 5px rgba(#ccc, .5);
+}
+
+.reviews-grid__block {
+    height: 380px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(#ccc, .5);
+
+    &.editing {
+        opacity: .5;
+    }
+}
+
+.reviews-grid__container {
+    height: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 20% 1fr 10%;
+    align-items: start;
+    grid-row-gap: 30px;
+}
+
+.reviews-grid__header {
+    display: flex;
+    border-bottom: 1px solid rgba($text-color, .1);
+    padding-bottom: 20px;
+}
+
+.reviews-grid__pic {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 20px;
+}
+
+.reviews-grid__name {
+    font-weight: bold;
+}
+
+.reviews-grid__position {
+    color: rgba($text-color, .5);
+}

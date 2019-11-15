@@ -71,6 +71,9 @@
                       .btns__default.group-block__btns
                         .btns__pencil
                         .btns__remove
+                      .btns__edit.group-block__btns
+                        .btns__tick.group-block__tick
+                        .btns__cross.group-block__cross
                   li.skills__item
                     input.skills__name(value="Terminal")
                     .skills__value.group-block__value
@@ -80,6 +83,9 @@
                       .btns__default.group-block__btns
                         .btns__pencil
                         .btns__remove
+                      .btns__edit.group-block__btns
+                        .btns__tick.group-block__tick
+                        .btns__cross.group-block__cross
                   li.skills__item
                     input.skills__name(value="Gulp")
                     .skills__value.group-block__value
@@ -89,6 +95,9 @@
                       .btns__default.group-block__btns
                         .btns__pencil
                         .btns__remove
+                      .btns__edit.group-block__btns
+                        .btns__tick.group-block__tick
+                        .btns__cross.group-block__cross
                   li.skills__item
                     input.skills__name(value="Webpack")
                     .skills__value.group-block__value
@@ -98,6 +107,9 @@
                       .btns__default.group-block__btns
                         .btns__pencil
                         .btns__remove
+                      .btns__edit.group-block__btns
+                        .btns__tick.group-block__tick
+                        .btns__cross.group-block__cross
               .group-block__footer
                 input(placeholder="Новый навык").group-block__newskill
                 .group-block__value
@@ -167,7 +179,6 @@
                   input(type="number" min="1" max="100" step="1").group-block__number
                   .group-block__percent %
                 .group-block__add-btn.add-btn +
-    
     .works
       header.admin-header
         .container
@@ -232,49 +243,156 @@
                   img(src="src/images/content/slide2.png").avatar__pic
                 .grid-block__content
                   .grid-block__title Сайт школы образования
-                  .grid-block__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .grid-block__text 
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                   .grid-block__link http://loftschool.ru
-                  .grid-block__btns
-                    .grid-block__edit Править
-                    .grid-block__remove Удалить
+                  .block__btns
+                    .block__edit Править
+                    .block__remove Удалить
               .works__grid-block
                 .grid-block__img
                   img(src="src/images/content/slide3.png").avatar__pic
                 .grid-block__content
                   .grid-block__title Сайт школы образования
-                  .grid-block__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .grid-block__text 
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                   .grid-block__link http://loftschool.ru
-                  .grid-block__btns
-                    .grid-block__edit Править
-                    .grid-block__remove Удалить
+                  .block__btns
+                    .block__edit Править
+                    .block__remove Удалить
               .works__grid-block
                 .grid-block__img
                   img(src="src/images/content/slide4.png").avatar__pic
                 .grid-block__content
                   .grid-block__title Сайт школы образования
-                  .grid-block__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .grid-block__text 
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                   .grid-block__link http://loftschool.ru
-                  .grid-block__btns
-                    .grid-block__edit Править
-                    .grid-block__remove Удалить
+                  .block__btns
+                    .block__edit Править
+                    .block__remove Удалить
               .works__grid-block
                 .grid-block__img
                   img(src="src/images/content/slide5.png").avatar__pic
                 .grid-block__content
                   .grid-block__title Сайт школы образования
-                  .grid-block__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .grid-block__text 
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                   .grid-block__link http://loftschool.ru
-                  .grid-block__btns
-                    .grid-block__edit Править
-                    .grid-block__remove Удалить
-
-
+                  .block__btns
+                    .block__edit Править
+                    .block__remove Удалить
+    .reviews
+      header.admin-header
+        .container
+          .admin-header__info
+            .admin-header__user
+              .admin-header__pic
+                img(src="../images/content/perizat.png").admin-header__avatar
+              .admin-header__name Перизат Кожагельдина
+            .admin-header__panel Панель администрирования
+          a(href="/").admin-header__exit Выйти
+      .admin__nav
+        .container
+          ul.tabs__list
+            li.tabs__item Обо мне
+            li.tabs__item Работы
+            li.tabs__item.active Отзывы
+      .reviews__content
+        .container
+          .block__title
+            .block__text Блок "Отзывы"
+          .reviews__blocks
+            .reviews-newblock
+              .reviews-newblock__container
+                .reviews-newblock__header.new-block__title Новый отзыв
+                .reviews-newblock__content
+                  .reviews-newblock__img
+                    .reviews-newblock__member-icon
+                    label.reviews-newblock__block
+                      .reviews-newblock__title__upload-text Добавить фото
+                      input(type="file").reviews-newblock__input
+                  .reviews-newblock__info
+                    .reviews-newblock__row
+                      label.reviews-newblock__block
+                        .reviews-newblock__title Имя автора
+                        input(placeholder="Ковальчук Дмитрий").reviews-newblock__input
+                      label.reviews-newblock__block
+                        .reviews-newblock__title Титул автора
+                        input(placeholder="Основатель LoftSchool").reviews-newblock__input
+                    .reviews-newblock__row
+                      label.reviews-newblock__block
+                        .reviews-newblock__title Отзыв
+                        textarea(placeholder="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!").reviews-newblock__input
+                    .reviews-newblock__row
+                      .new-block__btns
+                        .new-block__cancel Отмена
+                        .new-block__save.btn Сохранить
+                  .reviews-newblock__empty
+            .reviews-grid-blocks
+              .reviews-grid__add-block
+                .reviews__plus.works__plus +
+                .reviews__add.works__add-work Добавить отзыв
+              .reviews-grid__block.editing
+                .reviews-grid__container
+                  .reviews-grid__header
+                    .reviews-grid__pic.avatar
+                      img(src="src/images/content/vova.png").avatar__pic
+                    .reviews-grid__info
+                      .reviews-grid__name Владимир Сабанцев
+                      .reviews-grid__position Преподаватель
+                  .reviews-grid__content
+                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .block__btns
+                    .block__edit Править
+                    .block__remove Удалить
+              .reviews-grid__block
+                .reviews-grid__container
+                  .reviews-grid__header
+                    .reviews-grid__pic.avatar
+                      img(src="src/images/content/dima.png").avatar__pic
+                    .reviews-grid__info
+                      .reviews-grid__name Дмитрий Ковальчук
+                      .reviews-grid__position Основатель LoftSchool
+                  .reviews-grid__content
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .block__btns
+                    .block__edit Править
+                    .block__remove Удалить
+              .reviews-grid__block
+                .reviews-grid__container
+                  .reviews-grid__header
+                    .reviews-grid__pic.avatar
+                      img(src="src/images/content/vova.png").avatar__pic
+                    .reviews-grid__info
+                      .reviews-grid__name Владимир Сабанцев
+                      .reviews-grid__position Преподаватель
+                  .reviews-grid__content
+                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .block__btns
+                    .block__edit Править
+                    .block__remove Удалить
+              .reviews-grid__block
+                .reviews-grid__container
+                  .reviews-grid__header
+                    .reviews-grid__pic.avatar
+                      img(src="src/images/content/vova.png").avatar__pic
+                    .reviews-grid__info
+                      .reviews-grid__name Дмитрий Ковальчук
+                      .reviews-grid__position Основатель LoftSchool
+                  .reviews-grid__content
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .block__btns
+                    .block__edit Править
+                    .block__remove Удалить
 </template>
 
 <style lang="postcss">
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
   @import "normalize.css";
   @import "../styles/mixins.pcss";
-  @import "./styles/*.pcss";
   @import "../styles/layout/base.pcss";
+  @import "../styles/blocks/avatar.pcss";
+  @import "./styles/*.pcss";
+
 </style>
