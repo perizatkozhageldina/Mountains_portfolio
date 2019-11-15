@@ -1,0 +1,26 @@
+script(type="text/x-template")#reviews-slider
+    .reviews
+        .reviews__header
+            .section-title.reviews__title Что обо мне говорят
+            .reviews__btns
+                button(@click="previous()" :disabled="currentIndex === 0" :class="{disabled: currentIndex === 0}").reviews__btn.reviews__btn--prev  
+                    +icon('arrow-down', 'reviews-icon reviews-icon--prev')
+                button(@click="next()" :disabled="reviews.length === currentIndex" :class="{disabled: reviews.length === currentIndex}").reviews__btn.reviews__btn--next
+                    +icon('arrow-down', 'reviews-icon reviews-icon--next')
+        .reviews__content
+            flickity(ref="flickity" :options="flickityOptions")
+                .reviews__block(v-for="review in reviews" :key="review.id").carousel-cell
+                    review-block(
+                        :review="review"
+                    )
+
+script(type="text/x-template")#review-block
+    .reviews__review
+        .reviews__text.section-text
+            p {{review.text}}
+        .reviews__member.member
+            .avatar.member__avatar
+                img(:src="review.photo").avatar__pic
+            .member__info
+                .member__name {{review.author}}
+                .member__position.section-text {{review.title}}

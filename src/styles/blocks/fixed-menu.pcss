@@ -1,0 +1,79 @@
+.fixed-menu {
+    position: fixed;
+    right: 0;
+    z-index: 10;
+    display: none;
+    fill: $text-color;
+
+    @include tablets() {
+        display: block;
+        margin-right: 30px;
+        background: svg-load('menu-icon.svg', stroke=$text-color) no-repeat center center;
+        grid-area: header-links;        
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.fixed-display {
+    right: -100%;
+    position: fixed;
+    display: grid;
+    z-index: 2;
+    padding-left: 10%;
+    width: 50%;
+    height: 100vh;
+    background: #fff;
+    grid-template-rows: 15% 1fr 40%;
+    row-gap: 50px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.25s;
+
+    @include phones() {
+        width: 100%;
+        padding-left: 20%;
+    }
+}
+
+.close-btn {
+    display: block;
+    background: svg-load('close.svg', fill=$text-color, width="30px", height="30px") no-repeat right center;    
+    margin-right: 50px;
+}
+
+.fixed-display .nav {
+    align-self: center;
+}
+
+.fixed-display .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fixed-display .nav__item {
+    margin-bottom: 30px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.fixed-display .socials__list {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fixed-display .socials__item {
+    margin-right: 30px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.fixed-display .socials__icon {
+    display: block;
+    fill: $text-color;
+    width: 30px;
+    height: 30;
+}

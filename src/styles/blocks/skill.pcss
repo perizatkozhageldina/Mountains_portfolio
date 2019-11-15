@@ -1,0 +1,101 @@
+.skills__list {
+    grid-area: values-content;
+    justify-self: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        background: url("~images/content/bug.png") no-repeat;
+        width: 600px;
+        height: 700px;
+        margin-left: -550px;
+    }
+
+    @include tablets() {
+        margin-bottom: 30px;
+
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            background: url("~images/content/bug.png") center center / contain no-repeat;
+            width: 70%;
+            height: 300px;
+            margin: 50px 20%;
+        }
+    }
+}
+
+.skills-row {
+    margin-bottom: 60px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.skills-row__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include phones() {
+        justify-content: center;
+    }
+}
+
+.skills-row__title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 30px;
+    
+    @include tablets() {
+        text-align: center;
+    }
+}
+
+.skills-row__item {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba($text-color, .5);
+}
+
+.skill {
+    position: relative;
+}
+
+.skill__shape {
+    width: 200px;
+    height: 200px;
+
+    @include phones() {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+.skill__circle {
+    fill: transparent;
+}
+
+.skill__circle--position-under {
+    stroke: #ccc;
+    stroke-width: 10px;
+}
+
+.skill__circle--position-above {
+    stroke: url("#gradient");
+    stroke-width: 20px;
+    stroke-dasharray: 250;
+}
+
+.skill__title {
+    position: absolute;
+    top: 40%;
+    left: 50px;
+    width: 50%;
+    text-align: center;
+}

@@ -1,0 +1,160 @@
+.mainsection {
+    height: 100vh;
+}
+
+.mainsection__container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 1fr 20%;
+    grid-template-areas:
+    "header"
+    "mainsection"
+    "mainsection-btns";
+
+    @include tablets() {
+        margin-bottom: 0;
+    }
+}
+
+.mainsection__header {
+    padding-top: 65px;
+    grid-area: header;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 10% 1fr 20%;
+    grid-template-areas:
+    "logo header-menu header-links";
+
+    @include tablets() {
+        grid-template-columns: 10% 20% 1fr;
+        justify-items: end;
+    }
+
+    @include phones() {
+        grid-template-columns: 20% 20% 1fr;
+    }
+}
+
+.logo {
+    grid-area: logo;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.mainsection__menu {
+    grid-area: header-menu;
+    margin: 0 20px;
+}
+
+.mainsection__content {
+    min-height: 650px;
+    grid-area: mainsection;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainsection__links {
+    grid-area: header-links;
+    display: flex;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+
+    @include desktop() {
+        flex-direction: row;
+    }
+
+    @include tablets() {
+        flex-direction: column;
+    }
+}
+
+.user-info__desc {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    opacity: .4;
+    margin-bottom: 30px;
+
+    @include desktop() {
+        text-align: right;
+        margin-bottom: 0;
+    }
+
+    @include tablets() {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    @include phones {
+        font-size: 14px;
+    }
+}
+
+.user-info__name {
+    font-weight: bold;
+    font-size: 72px;
+    text-align: center;
+
+    @include desktop() {
+        text-align: left;
+        margin-left: 60px;
+    }
+
+    @include tablets() {
+        text-align: center;
+        margin-left: 0;
+        font-size: 48px;
+    }
+
+    @include phones {
+        font-size: 36px;
+    }
+}
+
+.mainsection__btns {
+    grid-area: mainsection-btns;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.scroll-down-btns {
+    cursor: pointer;
+    font-weight: bold;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        .scroll-icon {
+            fill: $hover-color;
+            transform: translateY(5px);
+        }
+    }
+
+    @include tablets() {
+        display: none;
+    }
+}
+
+.scroll-text {
+    margin-right: 20px;
+}
+
+.scroll-icon {
+    fill: $text-color;
+    width: 30px;
+    height: 30px;
+    transition: .5s;
+}

@@ -1,0 +1,32 @@
+.block__btns {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.block__edit {
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 100%;
+        width: 30px;
+        height: 30px;
+        background: svg-load('pencil.svg', fill=$links-color, width="20px", height="20px") no-repeat top center;
+    }
+}
+
+.block__remove {
+    position: relative;
+    margin-right: 30px;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 100%;
+        width: 30px;
+        height: 30px;
+        background: svg-load('remove.svg', fill=$error-color, width="20px", height="20px") no-repeat top center;
+    }
+}

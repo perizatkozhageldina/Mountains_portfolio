@@ -1,0 +1,145 @@
+.form__elem {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.form__row {
+    width: 70%;
+    display: flex;
+    margin-bottom: 60px;
+
+    @include tablets() {
+        width: 100%;
+    }
+
+    @include phones() {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+}
+
+.form__block {
+    position: relative;
+    margin-right: 50px;
+    flex: 1;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @include phones() {
+        margin-right: 0;
+        margin-bottom: 60px;
+    }
+
+    &.error {
+        .input-error {
+          display: block;
+        }
+    
+        .form-icon {
+          fill: red;
+          opacity: 1;
+        }
+
+        .input-block {
+            border-bottom-color: red;
+        }
+    }
+}
+
+.form__title {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.input-block {
+    display: flex;
+    border-bottom: 2px solid rgba(currentCoolor, .5);
+    padding-bottom: 10px;
+
+    &:hover {
+        .form-icon {
+            fill: $hover-color;
+            opacity: 1;
+        }
+        
+        border-bottom-color: $hover-color;
+    }
+}
+
+.input-error {
+    position: absolute;
+    display: none;
+    top: 100%;
+    z-index: 100;
+}
+
+.form__input {
+    border: none;
+    outline: none;
+    background: none;
+    padding-left: 40px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    color: $text-color;
+    text-wrap: wrap;
+
+    &::placeholder {
+        font-size: 18px;
+        font-weight: bold;
+        color: $text-color;
+        opacity: 1;
+    }
+
+    &--textarea {
+        resize: vertical;
+        overflow: hidden;
+    }
+
+    @include phones() {
+        padding-left: 0;
+    }
+}
+
+.input-icon {
+    margin-right: -30px;
+
+    @include tablets() {
+        display: none;
+    }
+}
+
+.form-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    fill: $text-color;
+    opacity: .5;
+}
+
+.form__btn {
+    width: 347px;
+    height: 80px;
+    border-radius: 40px 0;
+    background-color: #ffffff;
+    background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 70%);
+    color: white;
+    font-weight: bold;
+    outline: none;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    &:hover {
+        background-image: linear-gradient(to right, #9300e8 20%, #4a00ed 100%);
+    }
+
+    @include phones() {
+        width: 250px;
+        height: 60px;
+        border-radius: 25px 0;
+    }
+}
