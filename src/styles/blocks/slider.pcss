@@ -1,0 +1,231 @@
+.slider {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    grid-template-areas:
+    "slider-left slider-right";
+    grid-column-gap: 120px;
+
+    @include tablets {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(min-content, max-content) 1fr;
+        grid-template-areas:
+        "slider-left"
+        "slider-right";
+        grid-row-gap: 70px;
+        justify-items: center;
+    }
+}
+
+.slider__content {
+    grid-area: slider-left;
+    position: relative;
+    height: fit-content;
+    width: 100%;
+
+    &::before {
+        content: attr(data-slide);
+        font-size: 300px;
+        font-weight: bold;
+        opacity: .1;
+        position: absolute;
+        right: -17%;
+        top:  -10%;
+
+        @include tablets {
+            right: -20%;
+            top:  -30%;
+        }
+
+        @include phones {
+            display: none;
+        }
+    }
+
+    @include tablets {
+        max-width: 620px;
+    }
+}
+
+.slider__photo {
+    width: 100%;
+}
+
+.slider__fullpic {
+    height: 100%;
+    width: 100%;
+}
+
+.slider__preview {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    cursor: pointer;
+    width: 20%;
+
+    @include phones() {
+        display: none;
+    }
+}
+
+.previews__item {
+    position: relative;
+
+    &.active {
+        border: 3px solid $hover-color;
+    }
+}
+
+.previews__link {
+    &:hover {
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            background: $hover-color;
+            z-index: 2;
+            opacity: .4;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.previews__pic {
+    position: relative;
+    width: 100%;
+
+    @include tablets() {
+        max-width: 180px;
+    }
+
+    &:hover {
+        &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: $hover-color;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+    }
+}
+
+.slider__btns {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+
+    @include phones() {
+        top: unset;
+        bottom: 0;
+    }
+}
+
+.slider-button {
+    background: $text-color;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    transition: .4s;
+
+    &:hover {
+        background: $hover-color;
+    }
+}
+
+.slide__icon {
+    width: 10px;
+    height: 10px;
+    fill: white;
+    transform: rotate(-90deg);
+
+    &--next {
+        transform: rotate(-270deg);
+    }
+}
+
+.slider__data {
+    grid-area: slider-right;
+    display: grid;
+    grid-template-rows: 20% minmax(min-content, max-content) minmax(min-content, max-content) 15%;
+    grid-template-areas:
+    "slider-tags"
+    "slider-title"
+    "slider-text"
+    "slider-link";
+    align-items: center;
+    grid-row-gap: 30px;
+
+    @include tablets() {
+        justify-items: center;
+        width: 70%;
+        text-align: center;
+    }
+
+    @include tablets() {
+        width: 100%;
+        justify-items: start;
+        text-align: left;
+    }
+}
+
+.slider__tags {
+    grid-area: slider-tags;
+}
+
+.tags__list {
+    display: flex;
+}
+
+.tags__item {
+    margin-right: 20px;
+    font-size: 15px;
+    opacity: .7;
+    font-weight: 400;
+    background: rgba($text-color, .1);
+    color: $text-color;
+    border-radius: 30px;
+    padding: 16px 23px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.slider__title {
+    font-size: 30px;
+    font-weight: bold;
+    grid-area: slider-title;
+}
+
+.slider__desc {
+    grid-area: slider-text;
+    align-self: start;
+}
+
+.slider__link {
+    grid-area: slider-link;
+    position: relative;
+    margin-left: 35px;
+    text-decoration: none;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        width: 30px;
+        height: 35px;
+        margin-left: -30px;
+        background: svg-load('link.svg', fill=$text-color, width="20px", height="20px") no-repeat left center;
+    }
+
+    &:hover {
+        color: $hover-color;
+        font-weight: bold;
+    }
+}

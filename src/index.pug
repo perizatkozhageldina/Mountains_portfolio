@@ -1,5 +1,4 @@
 include ./mixins.pug
-
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -10,6 +9,17 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        include ./template/components/fixed-display
+        .welcome-section
+          include ./template/sections/mainsection
+          include ./template/sections/about
+          include ./template/components/mainparallax
+        include ./template/sections/values              
+        include ./template/sections/works      
+        .budda-section
+          include ./template/sections/reviews-section                
+          include ./template/sections/contacts 
+          include ./template/components/budda-parallax
+        include ./template/components/footer
+
+    include ./template/entry

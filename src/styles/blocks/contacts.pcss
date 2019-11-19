@@ -1,0 +1,15 @@
+.contacts {
+    display: grid;
+}
+
+.contacts__container {
+    display: grid;
+    grid-template-rows: 10% 1fr;
+    align-items: center;
+    align-self: center;
+    grid-row-gap: 60px;
+
+    @include tablets() {
+        text-align: center;
+    }
+}

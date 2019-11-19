@@ -1,0 +1,28 @@
+.works {
+    margin-top: 150px;
+    display: grid;
+    align-items: center;
+    margin-bottom: 130px;
+    padding-top: 120px;
+}
+
+.works__container {
+    display: grid;
+    grid-template-rows: 10% 1fr;
+    grid-template-areas:
+    "works-title"
+    "works-content";
+    grid-row-gap: 60px;
+
+    @include tablets() {
+        grid-row-gap: 0;
+    }
+}
+
+.works__title {
+    grid-area: works-title;
+}
+
+.works__content {
+    grid-area: works-content;
+}

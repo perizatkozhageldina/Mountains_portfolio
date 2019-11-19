@@ -1,0 +1,168 @@
+.flickity-viewport { 
+    width: 100%; 
+}
+
+.flickity-prev-next-button.previous,
+.flickity-prev-next-button.next {
+  display: none;
+}
+
+.reviews {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 1fr;
+    grid-template-areas:
+    "reviews-header"
+    "reviews-content";
+    grid-row-gap: 60px;
+    grid-column-gap: 10px;
+
+    @include phones() {
+        grid-template-areas:
+        "reviews-header"
+        "reviews-content";
+        grid-row-gap: 30px;
+        grid-column-gap: 0;
+        width: 100%;
+    }
+}
+.reviews__header {
+    grid-area: reviews-header;
+    display: flex;
+    align-items: center;
+
+    @include phones() {
+        justify-self: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.reviews__title {
+    align-self: center;
+
+    @include phones() {
+        justify-self: center;
+        margin-bottom: 20px;
+    }
+}
+
+.reviews__btns {
+    margin-left: 250px;
+    display: flex;
+
+    @include tablets() {
+        margin-left: 50px;
+    }
+
+    @include phones() {
+        flex-direction: row;
+        margin-left: 0;
+    }
+}
+
+.reviews__btn {
+    position: relative;
+    background: none;
+    outline: none;
+    margin-right: 50px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 50px;     
+        border-radius: 50%;
+        border: 1px solid $text-color;
+    }
+
+    &--prev {
+        &::before {
+            top: -50%;
+            left: -50%;
+        }
+    }
+    
+    &--next {
+        &::before {
+            top: -50%;
+            left: -50%;
+        }
+    }
+}
+
+.reviews-icon {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    fill: $text-color;
+
+    &--prev {
+        transform: rotate(-180deg);
+    }
+}
+
+.reviews__content {
+    grid-area: reviews-content;
+}
+
+.reviews__block {
+    position: relative;
+    width: 50%;
+
+    @include phones() {
+        width: 100%;
+        margin-bottom: 30px;
+        grid-row-gap: 30px;
+        margin-left: 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &::before {
+        content: "";
+        background: svg-load('quote.svg', fill=$text-color, width="70px", height="60px") no-repeat left top;
+        opacity: .05;
+        width: 80px;
+        height: 60px;
+        position: absolute;
+
+        @include phones() {
+            display: none;
+        }
+    }
+}
+
+.reviews__review {
+    display: grid;
+    grid-template-rows: minmax(min-content, max-content) 30%;
+    grid-template-areas: 
+    "reviews-text"
+    "reviews-member";
+    grid-row-gap: 70px;
+    align-items: start;
+
+}
+
+.reviews__text {
+    grid-area: reviews-text;
+    font-weight: 600;
+    padding-left: 90px;
+    padding-right: 10px;
+
+    @include phones() {
+        padding: 0;
+    }
+}
+
+.reviews__member {
+    grid-area: reviews-member;
+    display: flex;
+    align-items: center;
+}
